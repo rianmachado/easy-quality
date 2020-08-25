@@ -9,7 +9,7 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
-import br.com.easy.quality.form.application.command.Command;
+import br.com.easy.quality.form.adapter.event.command.Command;
 import br.com.easy.quality.form.application.validation.SelfValidating;
 import br.com.easy.quality.form.domain.Pergunta;
 import lombok.Getter;
@@ -40,5 +40,6 @@ public class CreateQuestionarioCommand extends SelfValidating<CreateQuestionario
 		}
 		validateSelf();
 	}
+
 
 }

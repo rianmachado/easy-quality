@@ -1,6 +1,9 @@
+/**
+ * @author rianmachado@gmail.com
+ */
 package br.com.easy.quality.form.application.service.exception;
 
-import br.com.easy.quality.form.application.event.InternalEvent;
+import br.com.easy.quality.form.adapter.event.InternalEvent;
 
 public class ServiceBusInvalidObjectException extends RuntimeException {
 

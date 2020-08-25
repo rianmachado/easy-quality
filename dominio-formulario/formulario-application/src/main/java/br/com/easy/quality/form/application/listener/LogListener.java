@@ -1,3 +1,6 @@
+/**
+ * @author rianmachado@gmail.com
+ */
 package br.com.easy.quality.form.application.listener;
 
 import org.slf4j.Logger;
@@ -6,7 +9,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import br.com.easy.quality.form.application.event.InternalEvent;
+import br.com.easy.quality.form.adapter.event.InternalEvent;
 import br.com.easy.quality.form.domain.exception.DomainException;
 
 @Component

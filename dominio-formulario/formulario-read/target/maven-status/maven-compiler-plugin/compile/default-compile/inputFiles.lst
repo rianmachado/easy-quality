@@ -1,0 +1,7 @@
+/Users/rian/ZUP/Estudo/easy-quality/dominio-formulario/formulario-read/src/main/java/br/com/easy/quality/form/read/out/QuestionarioReadDataBaseAdapter.java
+/Users/rian/ZUP/Estudo/easy-quality/dominio-formulario/formulario-read/src/main/java/br/com/easy/quality/form/read/bus/resolver/ListAllQuestionarioResolver.java
+/Users/rian/ZUP/Estudo/easy-quality/dominio-formulario/formulario-read/src/main/java/br/com/easy/quality/form/read/common/QuestionarioReadMapper.java
+/Users/rian/ZUP/Estudo/easy-quality/dominio-formulario/formulario-read/src/main/java/br/com/easy/quality/form/read/bus/query/ListAllQuestionarioQuery.java
+/Users/rian/ZUP/Estudo/easy-quality/dominio-formulario/formulario-read/src/main/java/br/com/easy/quality/form/read/bus/resolver/IdQuestionarioResolver.java
+/Users/rian/ZUP/Estudo/easy-quality/dominio-formulario/formulario-read/src/main/java/br/com/easy/quality/form/read/out/QuestionarioReadDataBase.java
+/Users/rian/ZUP/Estudo/easy-quality/dominio-formulario/formulario-read/src/main/java/br/com/easy/quality/form/read/bus/query/IdQuestionarioQuery.java

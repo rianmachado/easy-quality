@@ -6,7 +6,7 @@ package br.com.easy.quality.form.write.bus.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.easy.quality.form.application.handler.Handler;
+import br.com.easy.quality.form.adapter.event.handler.Handler;
 import br.com.easy.quality.form.domain.Questionario;
 import br.com.easy.quality.form.write.commad.CreateQuestionarioCommand;
 import br.com.easy.quality.form.write.in.CriarQuestionarioUseCase;

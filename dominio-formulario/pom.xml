@@ -13,6 +13,7 @@
 		<module>formulario-adapter-mongo</module>
 		<module>formulario-data-transport</module>
 		<module>formulario-application</module>
+		<module>formulario-adapter-event</module>
 		
 	</modules>
 	<parent>
