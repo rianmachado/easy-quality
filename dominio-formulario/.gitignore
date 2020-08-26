@@ -1,5 +1,6 @@
 HELP.md
 /target/
+/reports/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -10,13 +11,16 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
+.eclipse-pmd 
+.pmd 
+.scannerwork
+.ruleset
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-.idea/**
 
 ### NetBeans ###
 /nbproject/private/
@@ -28,10 +32,7 @@ HELP.md
 
 ### VS Code ###
 .vscode/
-/.mvn/wrapper/MavenWrapperDownloader.java
-/.mvn/wrapper/maven-wrapper.jar
-/.mvn/wrapper/maven-wrapper.properties
-/mvnw
-/mvnw.cmd
 
-src/main/jib/
+/logs
+
+

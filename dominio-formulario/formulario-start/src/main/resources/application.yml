@@ -19,6 +19,27 @@ spring:
   kafka:
    producer:
      bootstrap-servers: localhost:9092
+     key-serializer: org.apache.kafka.common.serialization.StringSerializer
+     value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+custonKafka:
+  loggin:
+    questionatio:
+      topic: topic-logs-events-formulario-done     
+  kamax:
+    in:
+      flight:
+        requests:
+          per:
+            connection: 1
+  retries: 10
+  enable:
+    idempotence: true
+  transactional:
+    id: logs-events-formulario-done    
+   
+
+
     
 springfox:
   documentation:

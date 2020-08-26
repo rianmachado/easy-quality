@@ -3,7 +3,9 @@
  */
 package br.com.easy.quality.form.adapter.event;
 
-public interface EventPublisher {
+import com.fasterxml.jackson.core.JsonProcessingException;
 
-	void log(InternalEvent event);
+public interface EventPublisher  {
+
+	void log(InternalEvent event) throws JsonProcessingException;
 }
