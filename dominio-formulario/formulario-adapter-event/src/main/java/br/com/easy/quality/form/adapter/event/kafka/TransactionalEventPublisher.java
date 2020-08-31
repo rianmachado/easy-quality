@@ -12,8 +12,6 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 import br.com.easy.quality.form.adapter.event.EventConverter;
 import br.com.easy.quality.form.adapter.event.EventPublisher;
 import br.com.easy.quality.form.adapter.event.InternalEvent;
@@ -27,10 +25,11 @@ public class TransactionalEventPublisher implements EventPublisher {
 
 	private final KafkaTemplate<String, String> kafkaTemplate;
 
+	//TODO: CONVERSOR PARA FORMATOS DESEJADOS NA PERSISTENCIA
 	private final EventConverter converter;
 
 	@Autowired
-	public TransactionalEventPublisher(@Value("${loggin.questionatio.topic}") final String topicName,
+	public TransactionalEventPublisher(@Value("${custonKafka.loggin.questionatio.topic}") final String topicName,
 			final KafkaTemplate<String, String> kafkaTemplate, final EventConverter converter) {
 		this.topicName = topicName;
 		this.kafkaTemplate = kafkaTemplate;
@@ -42,11 +41,9 @@ public class TransactionalEventPublisher implements EventPublisher {
 		log.info("Attempting to log {} to topic {}.", event, topicName);
 		kafkaTemplate.executeInTransaction(operations -> {
 			final String key = event.getId();
-			try {
-				operations.send(topicName, key, converter.from(event)).addCallback(this::onSuccess, this::onFailure);
-			} catch (JsonProcessingException e) {
-				log.error(e.getLocalizedMessage(), e);
-			}
+				//TODO: COM CONVERSOR 
+				//operations.send(topicName, key, converter.from(event)).addCallback(this::onSuccess, this::onFailure);
+				operations.send(topicName, key,  event.toJson() ).addCallback(this::onSuccess, this::onFailure);
 			return true;
 		});
 	}

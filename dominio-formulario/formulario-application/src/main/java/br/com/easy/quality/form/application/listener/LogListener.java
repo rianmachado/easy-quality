@@ -5,28 +5,39 @@ package br.com.easy.quality.form.application.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.form.adapter.event.InternalEvent;
+import br.com.easy.quality.form.adapter.event.kafka.TransactionalEventPublisher;
 import br.com.easy.quality.form.domain.exception.DomainException;
 
 @Component
 public class LogListener {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Async
-    @EventListener
-    void onEventOccur(InternalEvent event) {
+	@Autowired
+	private TransactionalEventPublisher transactionalEventPublisher;
 
-        if (event.isSuccess()) {
-            if (logger.isInfoEnabled()) logger.info(event.toJson());
-        } else if (event.getException() instanceof DomainException) {
-            if (logger.isWarnEnabled()) logger.warn(event.toJson(), event.getException());
-        } else {
-            if (logger.isErrorEnabled()) logger.error(event.toJson(), event.getException());
-        }
-    }
+	@Async
+	@EventListener
+	void onEventOccur(InternalEvent event) {
+
+		if (event.isSuccess()) {
+			if (logger.isInfoEnabled()) {
+				logger.info(event.toJson());
+				transactionalEventPublisher.log(event);
+			}
+
+		} else if (event.getException() instanceof DomainException) {
+			if (logger.isWarnEnabled())
+				logger.warn(event.toJson(), event.getException());
+		} else {
+			if (logger.isErrorEnabled())
+				logger.error(event.toJson(), event.getException());
+		}
+	}
 }
