@@ -12,28 +12,29 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
 
+import br.com.easy.quality.inspecao.adapter.event.CreateInspecaoHandlerEvent;
 import br.com.easy.quality.inspecao.adapter.event.EventConverter;
-import br.com.easy.quality.inspecao.adapter.event.EventPublisher;
-import br.com.easy.quality.inspecao.adapter.event.InternalEvent;
+import br.com.easy.quality.inspecao.adapter.event.EventPublisherWriteInspecao;
 
 @Component
-public class TransactionalEventPublisher implements EventPublisher {
+public class TransactionalEventCreateInspecao implements EventPublisherWriteInspecao {
 
-	private static final Logger log = LoggerFactory.getLogger(TransactionalEventPublisher.class);
+	private static final Logger log = LoggerFactory.getLogger(TransactionalEventCreateInspecao.class);
 
 	private final String topicName;
 
 	private final KafkaTemplate<String, String> kafkaTemplate;
 
 	@Autowired
-	public TransactionalEventPublisher(@Value("${custonKafka.loggin.inspecao.topic}") final String topicName,
+	public TransactionalEventCreateInspecao(
+			@Value("${custonKafka.integration.cadastro.inspecao.questionario}") final String topicName,
 			final KafkaTemplate<String, String> kafkaTemplate, final EventConverter converter) {
 		this.topicName = topicName;
 		this.kafkaTemplate = kafkaTemplate;
 	}
 
 	@Override
-	public void log(final InternalEvent event) {
+	public void create(final CreateInspecaoHandlerEvent event) {
 		log.info("Attempting to log {} to topic {}.", event, topicName);
 		kafkaTemplate.executeInTransaction(operations -> {
 			final String key = event.getId();

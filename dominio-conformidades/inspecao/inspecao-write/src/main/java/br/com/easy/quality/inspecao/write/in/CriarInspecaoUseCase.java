@@ -16,6 +16,11 @@ public class CriarInspecaoUseCase {
 	private InspecaoWriteDataBaseAdapter InspecaoWriteDataBaseAdapter;
 
 	public void saveInspecao(Inspecao inspecao) {
+		
+		//TODO:
+		//OBTER O QUESTIONARIO TEMPLATE e SETAR DATA/HORA NO dataDeUsoQuestionarioModelo
+		
+		
 		InspecaoWriteDataBaseAdapter.saveInspecao(inspecao);
 	}
 

@@ -26,9 +26,15 @@ spring:
       
 custonKafka:
   loggin:
-    questionatio:
-      topic: topic-logs-events-inspecao-done     
-    
+    inspecao:
+      topic: topic-logs-events-inspecao-done
+  integration:
+     cadastro:
+      inspecao:
+        questionario: topic-integration-cadastro-inspecao-questionario
+          
+        
+              
 springfox:
   documentation:
     swagger:

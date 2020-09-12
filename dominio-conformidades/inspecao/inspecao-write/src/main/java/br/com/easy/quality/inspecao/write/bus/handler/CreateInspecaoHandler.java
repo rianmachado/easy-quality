@@ -6,20 +6,32 @@ package br.com.easy.quality.inspecao.write.bus.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.easy.quality.inspecao.adapter.event.CreateInspecaoHandlerEvent;
 import br.com.easy.quality.inspecao.adapter.event.handler.Handler;
-import br.com.easy.quality.inspecao.domain.Inspecao;
 import br.com.easy.quality.inspecao.write.commad.CreateInspecaoCommand;
-import br.com.easy.quality.inspecao.write.in.CriarInspecaoUseCase;
+import br.com.easy.quality.inspecao.write.util.DataConverter;
 
 @Service
 public class CreateInspecaoHandler implements Handler<CreateInspecaoCommand> {
 
 	@Autowired
-	CriarInspecaoUseCase criarInspecaoUseCase;
+	DataConverter dataConverter;
 
 	@Override
 	public void handle(CreateInspecaoCommand command) {
-		var inspecao = new Inspecao(command.getTitulo(), command.getStatus());
-		criarInspecaoUseCase.saveInspecao(inspecao);
+
+		/* PASSAR PARA O CONSUMIDOR DO EVENDO RETORNADO PELA CONSULTA DO QUESTIONARIO
+		var inspecao = Inspecao.builder()
+				.dataDeExpiracao(dataConverter.toLocalDateTime("yyyy-MM-dd", command.getDataDeExpiracao()))
+				.nomeColaboradorEntrevistado(command.getNomeColaboradorEntrevistado())
+				.nomeColaboradorEntrevistador(command.getNomeColaboradorEntrevistador()).build();
+
+		inspecao.criarInspecao();
+		inspecao.editarInspecao();
+		*/
+		CreateInspecaoHandlerEvent createInspecaoHandlerEvent = new CreateInspecaoHandlerEvent(command);
+		createInspecaoHandlerEvent.setStatusEventoCriacaoInspecao(true);
+
 	}
+
 }
