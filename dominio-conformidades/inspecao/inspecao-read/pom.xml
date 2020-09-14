@@ -29,7 +29,7 @@
 
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>inspecao-application</artifactId>
+			<artifactId>inspecao-adapter-event</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

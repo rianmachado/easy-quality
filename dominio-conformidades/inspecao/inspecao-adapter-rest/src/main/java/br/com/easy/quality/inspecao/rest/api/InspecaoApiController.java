@@ -21,9 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.easy.quality.inspecao.application.service.ServiceBus;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
-import br.com.easy.quality.inspecao.read.bus.query.IdInspecaoQuery;
-import br.com.easy.quality.inspecao.read.bus.query.ListAllInspecaoQuery;
-import br.com.easy.quality.inspecao.write.commad.CreateInspecaoCommand;
+import br.com.easy.quality.inspecao.read.in.query.IdInspecaoQuery;
+import br.com.easy.quality.inspecao.read.in.query.ListAllInspecaoQuery;
 import io.swagger.annotations.ApiParam;
 
 @Controller
@@ -36,7 +35,7 @@ public class InspecaoApiController implements InspecaoApi {
 
 	public ResponseEntity<Void> criarInspecao(
 			@ApiParam(value = "Objeto utilizado para adicionar nova inspecao", required = true) @Valid @RequestBody InspecaoDTO body) {
-		var comando = new CreateInspecaoCommand(body);
+		var comando = serviceBus.obterCreateInspecaoCommand(body);
 		serviceBus.execute(comando);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
@@ -53,7 +52,7 @@ public class InspecaoApiController implements InspecaoApi {
 
 	public ResponseEntity<InspecaoDTO> getInspecaoPorId(
 			@ApiParam(value = "ID da inspecao para retorno", required = true) @PathVariable("inspecaoId") String inspecaoId) {
-		var query = new IdInspecaoQuery();
+		var query = serviceBus.obterQueryInspecaoPorId();
 		query.setId(inspecaoId);
 		serviceBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
@@ -61,7 +60,7 @@ public class InspecaoApiController implements InspecaoApi {
 
 	@Override
 	public ResponseEntity<List<InspecaoDTO>> getInspecoes() {
-		var query = new ListAllInspecaoQuery();
+		var query = serviceBus.obterQueryListAllInspecao();
 		serviceBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
 	}

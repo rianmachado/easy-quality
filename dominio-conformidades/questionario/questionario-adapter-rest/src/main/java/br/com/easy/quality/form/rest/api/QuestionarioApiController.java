@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
 import br.com.easy.quality.form.application.service.ServiceBus;
-import br.com.easy.quality.form.read.bus.query.IdQuestionarioQuery;
-import br.com.easy.quality.form.read.bus.query.ListAllQuestionarioQuery;
-import br.com.easy.quality.form.write.commad.CreateQuestionarioCommand;
+import br.com.easy.quality.form.read.in.query.IdQuestionarioQuery;
+import br.com.easy.quality.form.read.in.query.ListAllQuestionarioQuery;
+import br.com.easy.quality.form.write.in.commad.CreateQuestionarioCommand;
 import io.swagger.annotations.ApiParam;
 
 @Controller
@@ -39,7 +39,7 @@ public class QuestionarioApiController implements QuestionarioApi {
 
 	public ResponseEntity<Void> criarQuestionario(
 			@ApiParam(value = "Objeto utilizado para adicionar novo questionario", required = true) @Valid @RequestBody QuestionarioDTO body) {
-		var comando = new CreateQuestionarioCommand(body);
+		var comando = serviceBus.obterCreateQuestionarioCommand(body);
 		serviceBus.execute(comando);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
@@ -56,7 +56,7 @@ public class QuestionarioApiController implements QuestionarioApi {
 
 	public ResponseEntity<QuestionarioDTO> getQuestionarioPorId(
 			@ApiParam(value = "ID da questionario para retorno", required = true) @PathVariable("questionarioId") String questionarioId) {
-		var query = new IdQuestionarioQuery();
+		var query = serviceBus.obterQueryQuestionarioPorId();
 		query.setId(questionarioId);
 		serviceBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
@@ -64,7 +64,7 @@ public class QuestionarioApiController implements QuestionarioApi {
 
 	@Override
 	public ResponseEntity<List<QuestionarioDTO>> getQuestionarios() {
-		var query = new ListAllQuestionarioQuery();
+		var query = serviceBus.obterQueryListAllQuestionario();
 		serviceBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
 	}

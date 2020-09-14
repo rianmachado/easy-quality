@@ -8,13 +8,18 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
+import br.com.easy.quality.dto.QuestionarioDTO;
 import br.com.easy.quality.form.adapter.event.CommandEvent;
 import br.com.easy.quality.form.adapter.event.InternalEvent;
 import br.com.easy.quality.form.adapter.event.QueryEvent;
-import br.com.easy.quality.form.adapter.event.command.Command;
+import br.com.easy.quality.form.adapter.event.handler.Command;
 import br.com.easy.quality.form.adapter.event.handler.Handler;
 import br.com.easy.quality.form.adapter.event.query.Query;
+import br.com.easy.quality.form.adapter.event.query.Resolver;
 import br.com.easy.quality.form.application.service.exception.ServiceBusInvalidObjectException;
+import br.com.easy.quality.form.read.in.query.IdQuestionarioQuery;
+import br.com.easy.quality.form.read.in.query.ListAllQuestionarioQuery;
+import br.com.easy.quality.form.write.in.commad.CreateQuestionarioCommand;
 
 @Component
 public class ServiceBus {
@@ -70,4 +75,17 @@ public class ServiceBus {
 	            default -> throw new ServiceBusInvalidObjectException(event);
 	        }
 	    }
+	 
+	 public CreateQuestionarioCommand obterCreateQuestionarioCommand(QuestionarioDTO body) {
+			return new CreateQuestionarioCommand(body);
+		}
+
+		public IdQuestionarioQuery obterQueryQuestionarioPorId() {
+			return new IdQuestionarioQuery();
+		}
+
+		public ListAllQuestionarioQuery obterQueryListAllQuestionario() {
+			return new ListAllQuestionarioQuery();
+		}
+	 
 }

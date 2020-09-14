@@ -11,6 +11,12 @@
 	<artifactId>inspecao-write</artifactId>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>inspecao-domain</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>easy.quality</groupId>
 			<artifactId>inspecao-adapter-mongo</artifactId>
@@ -25,12 +31,15 @@
 			<artifactId>inspecao-data-transport</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>inspecao-application</artifactId>
+			<artifactId>inspecao-adapter-event</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
 		</dependency>
 
 	</dependencies>

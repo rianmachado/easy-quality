@@ -4,7 +4,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 
 import br.com.easy.quality.inspecao.adapter.event.CreateInspecaoHandlerEvent;
-import br.com.easy.quality.inspecao.adapter.event.kafka.TransactionalEventCreateInspecao;
+import br.com.easy.quality.inspecao.publish.TransactionalEventCreateInspecao;
 
 public class CreateInspecaoListner {
 

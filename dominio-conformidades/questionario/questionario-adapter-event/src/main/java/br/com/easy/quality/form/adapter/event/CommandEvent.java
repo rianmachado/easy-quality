@@ -7,7 +7,7 @@ import java.util.UUID;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.easy.quality.form.adapter.event.command.Command;
+import br.com.easy.quality.form.adapter.event.handler.Command;
 import br.com.easy.quality.form.domain.exception.DomainException;
 
 public class CommandEvent extends InternalEvent {

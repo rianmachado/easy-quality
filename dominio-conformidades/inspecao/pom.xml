@@ -14,7 +14,8 @@
 		<module>inspecao-data-transport</module>
 		<module>inspecao-application</module>
 		<module>inspecao-adapter-event</module>
-		
+		<module>inspecao-adapter-kafka</module>
+
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -88,7 +89,6 @@
 				<artifactId>inspecao-adapter-rest</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
-
 
 			<!-- Test dependencies -->
 			<dependency>

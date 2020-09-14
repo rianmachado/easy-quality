@@ -15,10 +15,35 @@
 			<artifactId>questionario-domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>easy.quality</groupId>
 			<artifactId>questionario-adapter-event</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>questionario-read</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>questionario-write</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>questionario-adapter-kafka</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>questionario-data-transport</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

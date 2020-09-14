@@ -11,8 +11,8 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.form.adapter.event.InternalEvent;
-import br.com.easy.quality.form.adapter.event.kafka.TransactionalEventPublisher;
 import br.com.easy.quality.form.domain.exception.DomainException;
+import br.com.easy.quality.form.publish.TransactionalEventObservability;
 
 @Component
 public class LogListener {
@@ -20,7 +20,7 @@ public class LogListener {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private TransactionalEventPublisher transactionalEventPublisher;
+	private TransactionalEventObservability transactionalEventObservability;
 
 	@Async
 	@EventListener
@@ -29,7 +29,7 @@ public class LogListener {
 		if (event.isSuccess()) {
 			if (logger.isInfoEnabled()) {
 				logger.info(event.toJson());
-				transactionalEventPublisher.log(event);
+				transactionalEventObservability.registrar(event);
 			}
 
 		} else if (event.getException() instanceof DomainException) {
