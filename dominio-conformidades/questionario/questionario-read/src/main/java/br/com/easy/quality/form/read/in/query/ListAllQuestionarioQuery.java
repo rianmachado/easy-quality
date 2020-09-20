@@ -5,7 +5,7 @@ package br.com.easy.quality.form.read.in.query;
 import java.util.List;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
-import br.com.easy.quality.form.adapter.event.query.Query;
+import br.com.easy.quality.event.query.Query;
 
 public class ListAllQuestionarioQuery implements Query {
 

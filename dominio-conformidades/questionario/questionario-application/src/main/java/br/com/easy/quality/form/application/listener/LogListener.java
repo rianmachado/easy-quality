@@ -10,7 +10,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import br.com.easy.quality.form.adapter.event.InternalEvent;
+import br.com.easy.quality.event.ObservabilityEvent;
 import br.com.easy.quality.form.domain.exception.DomainException;
 import br.com.easy.quality.form.publish.TransactionalEventObservability;
 
@@ -24,7 +24,7 @@ public class LogListener {
 
 	@Async
 	@EventListener
-	void onEventOccur(InternalEvent event) {
+	void onEventOccur(ObservabilityEvent event) {
 
 		if (event.isSuccess()) {
 			if (logger.isInfoEnabled()) {

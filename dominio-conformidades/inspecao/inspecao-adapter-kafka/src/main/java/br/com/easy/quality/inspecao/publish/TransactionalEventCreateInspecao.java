@@ -12,12 +12,11 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
 
-import br.com.easy.quality.inspecao.adapter.event.CreateInspecaoHandlerEvent;
-import br.com.easy.quality.inspecao.adapter.event.EventConverter;
-import br.com.easy.quality.inspecao.adapter.event.WriteInspecaoEventStore;
+import br.com.easy.quality.event.Event;
+import br.com.easy.quality.event.EventStore;
 
 @Component
-public class TransactionalEventCreateInspecao implements WriteInspecaoEventStore {
+public class TransactionalEventCreateInspecao implements EventStore {
 
 	private static final Logger log = LoggerFactory.getLogger(TransactionalEventCreateInspecao.class);
 
@@ -28,25 +27,19 @@ public class TransactionalEventCreateInspecao implements WriteInspecaoEventStore
 	@Autowired
 	public TransactionalEventCreateInspecao(
 			@Value("${custonKafka.integration.cadastro.inspecao.questionario}") final String topicName,
-			final KafkaTemplate<String, String> kafkaTemplate, final EventConverter converter) {
+			final KafkaTemplate<String, String> kafkaTemplate) {
 		this.topicName = topicName;
 		this.kafkaTemplate = kafkaTemplate;
 	}
 
 	@Override
-	public void create(final CreateInspecaoHandlerEvent event) {
+	public void registrar(final Event event) {
 		log.info("Attempting to log {} to topic {}.", event, topicName);
 		kafkaTemplate.executeInTransaction(operations -> {
-			final String key = event.getId();
+			final String key = event.obterGUID();
 			operations.send(topicName, key, event.toJson()).addCallback(this::onSuccess, this::onFailure);
 			return true;
 		});
-	}
-
-	@Override
-	public void update(CreateInspecaoHandlerEvent event) {
-		// TODO Auto-generated method stub
-
 	}
 
 	private void onSuccess(final SendResult<String, String> result) {

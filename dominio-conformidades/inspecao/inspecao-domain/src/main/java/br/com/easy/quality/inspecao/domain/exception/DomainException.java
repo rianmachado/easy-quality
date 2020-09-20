@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class DomainException extends RuntimeException {
 
-	private static final long serialVersionUID = -5521779002961612630L;
+	private static final long serialVersionUID = 3473270754462133868L;
 
 	private CodeMsg bundle;
 

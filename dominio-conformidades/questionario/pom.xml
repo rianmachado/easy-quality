@@ -13,7 +13,7 @@
 		<module>questionario-adapter-mongo</module>
 		<module>questionario-data-transport</module>
 		<module>questionario-application</module>
-		<module>questionario-adapter-event</module>
+		<module>questionario-event</module>
 		<module>questionario-adapter-kafka</module>
 		
 	</modules>

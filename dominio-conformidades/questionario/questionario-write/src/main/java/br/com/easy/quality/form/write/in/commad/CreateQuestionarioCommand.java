@@ -9,7 +9,7 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
-import br.com.easy.quality.form.adapter.event.handler.Command;
+import br.com.easy.quality.event.command.Command;
 import br.com.easy.quality.form.domain.Pergunta;
 import br.com.easy.quality.form.write.in.validation.SelfValidating;
 import lombok.Getter;

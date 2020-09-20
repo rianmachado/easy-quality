@@ -6,7 +6,7 @@ package br.com.easy.quality.inspecao.read.in.resolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.easy.quality.inspecao.adapter.event.query.Resolver;
+import br.com.easy.quality.event.query.Resolver;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
 import br.com.easy.quality.inspecao.read.in.query.IdInspecaoQuery;
 import br.com.easy.quality.inspecao.read.out.InspecaoReadDataBaseAdapter;

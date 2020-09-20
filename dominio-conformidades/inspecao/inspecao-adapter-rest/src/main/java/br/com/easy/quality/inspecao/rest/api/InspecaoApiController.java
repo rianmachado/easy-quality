@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.easy.quality.inspecao.application.service.ServiceBus;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
-import br.com.easy.quality.inspecao.read.in.query.IdInspecaoQuery;
-import br.com.easy.quality.inspecao.read.in.query.ListAllInspecaoQuery;
 import io.swagger.annotations.ApiParam;
 
 @Controller

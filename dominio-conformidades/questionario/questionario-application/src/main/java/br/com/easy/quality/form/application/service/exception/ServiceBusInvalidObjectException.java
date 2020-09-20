@@ -3,11 +3,11 @@
  */
 package br.com.easy.quality.form.application.service.exception;
 
-import br.com.easy.quality.form.adapter.event.InternalEvent;
+import br.com.easy.quality.event.ObservabilityEvent;
 
 public class ServiceBusInvalidObjectException extends RuntimeException {
 
-    public ServiceBusInvalidObjectException(InternalEvent event) {
+    public ServiceBusInvalidObjectException(ObservabilityEvent event) {
         super(String.format("ServiceBus does not recognizes Object of type: %s",
                 event.getSource().getClass().getCanonicalName()));
     }

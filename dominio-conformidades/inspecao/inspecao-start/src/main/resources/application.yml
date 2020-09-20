@@ -23,7 +23,7 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       retries: 5
       transaction-id-prefix: logs-events-inspecao-done
-      
+        
 custonKafka:
   loggin:
     inspecao:

@@ -96,4 +96,16 @@ public class Inspecao {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Inspecao [titulo=" + titulo + ", status=" + status + ", nomeColaboradorEntrevistador="
+				+ nomeColaboradorEntrevistador + ", nomeColaboradorEntrevistado=" + nomeColaboradorEntrevistado
+				+ ", dataCriacao=" + dataCriacao + ", dataEdicao=" + dataEdicao + ", dataDeExpiracao=" + dataDeExpiracao
+				+ ", dataDeUsoQuestionarioModelo=" + dataDeUsoQuestionarioModelo + ", questionario=" + questionario
+				+ "]";
+	}
+	
+	
+	
+
 }

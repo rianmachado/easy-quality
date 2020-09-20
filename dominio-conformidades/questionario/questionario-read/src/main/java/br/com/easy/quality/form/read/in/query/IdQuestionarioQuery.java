@@ -4,7 +4,7 @@
 package br.com.easy.quality.form.read.in.query;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
-import br.com.easy.quality.form.adapter.event.query.Query;
+import br.com.easy.quality.event.query.Query;
 import lombok.Getter;
 import lombok.Setter;
 

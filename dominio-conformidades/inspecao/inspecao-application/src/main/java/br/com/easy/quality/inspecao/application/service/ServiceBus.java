@@ -7,13 +7,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
-import br.com.easy.quality.inspecao.adapter.event.CommandEvent;
-import br.com.easy.quality.inspecao.adapter.event.InternalEvent;
-import br.com.easy.quality.inspecao.adapter.event.QueryEvent;
-import br.com.easy.quality.inspecao.adapter.event.command.Command;
-import br.com.easy.quality.inspecao.adapter.event.command.Handler;
-import br.com.easy.quality.inspecao.adapter.event.query.Query;
-import br.com.easy.quality.inspecao.adapter.event.query.Resolver;
+import br.com.easy.quality.event.CommandEvent;
+import br.com.easy.quality.event.ObservabilityEvent;
+import br.com.easy.quality.event.QueryEvent;
+import br.com.easy.quality.event.command.Command;
+import br.com.easy.quality.event.command.Handler;
+import br.com.easy.quality.event.query.Query;
+import br.com.easy.quality.event.query.Resolver;
 import br.com.easy.quality.inspecao.application.service.exception.ServiceBusInvalidObjectException;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
 import br.com.easy.quality.inspecao.read.in.query.IdInspecaoQuery;
@@ -43,7 +43,7 @@ public class ServiceBus {
 		execute(event);
 	}
 
-	private void execute(InternalEvent event) {
+	private void execute(ObservabilityEvent event) {
 
 		try {
 			run(event);
@@ -56,7 +56,7 @@ public class ServiceBus {
 		}
 	}
 
-	private void run(InternalEvent event) {
+	private void run(ObservabilityEvent event) {
 
 		var beanName = event.getOrigin().substring(0, 1).toLowerCase() + event.getOrigin().substring(1);
 

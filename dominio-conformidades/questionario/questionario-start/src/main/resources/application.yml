@@ -23,11 +23,27 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       retries: 5
       transaction-id-prefix: logs-events-formulario-done
+    consumer:
+      bootstrap-servers: localhost:9092
+      groupId: group-integration-cadastro-inspecao-questionario
+      keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
+      valueDeserializer: net.mguenther.gtd.kafka.serialization.ItemEventDeserializer
+      autoOffsetReset: earliest
+      enableAutoCommit: false
+      isolationLevel: read-committed
+    listener:
+      ackMode: MANUAL  
       
 custonKafka:
   loggin:
     questionatio:
-      topic: topic-logs-events-formulario-done     
+      topic: topic-logs-events-formulario-done
+  integration:
+     cadastro:
+      inspecao:
+        questionario: topic-integration-cadastro-inspecao-questionario    
+      
+           
     
 springfox:
   documentation:

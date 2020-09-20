@@ -3,7 +3,7 @@
  */
 package br.com.easy.quality.inspecao.read.in.query;
 
-import br.com.easy.quality.inspecao.adapter.event.query.Query;
+import br.com.easy.quality.event.query.Query;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
 import lombok.Getter;
 import lombok.Setter;

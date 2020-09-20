@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
-import br.com.easy.quality.form.adapter.event.query.Resolver;
+import br.com.easy.quality.event.query.Resolver;
 import br.com.easy.quality.form.read.in.query.ListAllQuestionarioQuery;
 import br.com.easy.quality.form.read.out.QuestionarioReadDataBaseAdapter;
 

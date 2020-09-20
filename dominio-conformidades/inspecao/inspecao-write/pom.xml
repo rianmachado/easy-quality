@@ -23,6 +23,11 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>inspecao-adapter-kafka</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
@@ -33,7 +38,7 @@
 		</dependency>
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>inspecao-adapter-event</artifactId>
+			<artifactId>inspecao-event</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
