@@ -29,7 +29,7 @@
 
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>questionario-event</artifactId>
+			<artifactId>easy-quality-event</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		

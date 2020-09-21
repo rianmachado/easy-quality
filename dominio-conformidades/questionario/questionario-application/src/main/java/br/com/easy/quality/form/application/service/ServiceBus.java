@@ -71,7 +71,7 @@ public class ServiceBus {
 			Resolver<Query> resolver = (Resolver) context.getBean(resolverBeanName);
 			resolver.resolve((Query) event.getSource());
 		}
-		
+
 		default -> throw new ServiceBusInvalidObjectException(event);
 		}
 	}
@@ -80,8 +80,8 @@ public class ServiceBus {
 		return new CreateQuestionarioCommand(body);
 	}
 
-	public IdQuestionarioQuery obterQueryQuestionarioPorId() {
-		return new IdQuestionarioQuery();
+	public IdQuestionarioQuery obterQueryQuestionarioPorId(String id) {
+		return IdQuestionarioQuery.builder().id(id).build();
 	}
 
 	public ListAllQuestionarioQuery obterQueryListAllQuestionario() {

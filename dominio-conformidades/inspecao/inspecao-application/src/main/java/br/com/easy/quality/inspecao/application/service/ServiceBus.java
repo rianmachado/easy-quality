@@ -79,8 +79,8 @@ public class ServiceBus {
 		return new CreateInspecaoCommand(body);
 	}
 
-	public IdInspecaoQuery obterQueryInspecaoPorId() {
-		return new IdInspecaoQuery();
+	public IdInspecaoQuery obterQueryInspecaoPorId(String id) {
+		return  IdInspecaoQuery.builder().id(id).build();
 	}
 
 	public ListAllInspecaoQuery obterQueryListAllInspecao() {

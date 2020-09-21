@@ -50,8 +50,7 @@ public class InspecaoApiController implements InspecaoApi {
 
 	public ResponseEntity<InspecaoDTO> getInspecaoPorId(
 			@ApiParam(value = "ID da inspecao para retorno", required = true) @PathVariable("inspecaoId") String inspecaoId) {
-		var query = serviceBus.obterQueryInspecaoPorId();
-		query.setId(inspecaoId);
+		var query = serviceBus.obterQueryInspecaoPorId(inspecaoId);
 		serviceBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
 	}

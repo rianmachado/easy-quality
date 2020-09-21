@@ -21,9 +21,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
 import br.com.easy.quality.form.application.service.ServiceBus;
-import br.com.easy.quality.form.read.in.query.IdQuestionarioQuery;
-import br.com.easy.quality.form.read.in.query.ListAllQuestionarioQuery;
-import br.com.easy.quality.form.write.in.commad.CreateQuestionarioCommand;
 import io.swagger.annotations.ApiParam;
 
 @Controller
@@ -56,8 +53,7 @@ public class QuestionarioApiController implements QuestionarioApi {
 
 	public ResponseEntity<QuestionarioDTO> getQuestionarioPorId(
 			@ApiParam(value = "ID da questionario para retorno", required = true) @PathVariable("questionarioId") String questionarioId) {
-		var query = serviceBus.obterQueryQuestionarioPorId();
-		query.setId(questionarioId);
+		var query = serviceBus.obterQueryQuestionarioPorId(questionarioId);
 		serviceBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
 	}

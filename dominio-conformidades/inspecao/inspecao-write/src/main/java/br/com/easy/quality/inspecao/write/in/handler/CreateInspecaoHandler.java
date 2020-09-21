@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.easy.quality.event.command.Handler;
-import br.com.easy.quality.inspecao.adapter.event.CreateInspecaoEvent;
+import br.com.easy.quality.inspecao.event.CreateInspecaoEvent;
 import br.com.easy.quality.inspecao.write.in.commad.CreateInspecaoCommand;
 import br.com.easy.quality.inspecao.write.out.InspecaoWriteMessageAdapter;
 

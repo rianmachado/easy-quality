@@ -2,7 +2,7 @@
  * @author rianmachado@gmail.com
  */
 
-package br.com.easy.quality.form.publish;
+package br.com.easy.quality.form.event.publish;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,19 +16,23 @@ import br.com.easy.quality.event.Event;
 import br.com.easy.quality.event.EventStore;
 
 @Component
-public class TransactionalEventQuestionario implements EventStore {
+public class TransactionalEventObservability implements EventStore {
 
-	private static final Logger log = LoggerFactory.getLogger(TransactionalEventQuestionario.class);
+	private static final Logger log = LoggerFactory.getLogger(TransactionalEventObservability.class);
 
 	private final String topicName;
 
 	private final KafkaTemplate<String, String> kafkaTemplate;
 
+	// TODO: CONVERSOR PARA FORMATOS DESEJADOS NA PERSISTENCIA
+	// private final EventConverter converter;
+
 	@Autowired
-	public TransactionalEventQuestionario(@Value("${xxxxxxxxx.questionatio.topic}") final String topicName,
+	public TransactionalEventObservability(@Value("${custonKafka.loggin.questionatio.topic}") final String topicName,
 			final KafkaTemplate<String, String> kafkaTemplate) {
 		this.topicName = topicName;
 		this.kafkaTemplate = kafkaTemplate;
+		// this.converter = converter;
 	}
 
 	@Override
@@ -36,6 +40,9 @@ public class TransactionalEventQuestionario implements EventStore {
 		log.info("Attempting to log {} to topic {}.", event, topicName);
 		kafkaTemplate.executeInTransaction(operations -> {
 			final String key = event.obterGUID();
+			// TODO: COM CONVERSOR
+			// operations.send(topicName, key,
+			// converter.from(event)).addCallback(this::onSuccess, this::onFailure);
 			operations.send(topicName, key, event.toJson()).addCallback(this::onSuccess, this::onFailure);
 			return true;
 		});
@@ -50,4 +57,5 @@ public class TransactionalEventQuestionario implements EventStore {
 	private void onFailure(final Throwable t) {
 		log.warn("Unable to write QuestionarioEvent to topic {}.", topicName, t);
 	}
+
 }

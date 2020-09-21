@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Questionario {
 
 	@NonNull
-	private String GUID;
+	private String guid;
 
 	@NonNull
 	private List<Pergunta> perguntas;

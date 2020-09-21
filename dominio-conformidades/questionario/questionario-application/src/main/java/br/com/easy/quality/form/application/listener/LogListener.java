@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.event.ObservabilityEvent;
 import br.com.easy.quality.form.domain.exception.DomainException;
-import br.com.easy.quality.form.publish.TransactionalEventObservability;
+import br.com.easy.quality.form.event.publish.TransactionalEventObservability;
 
 @Component
 public class LogListener {

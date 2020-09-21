@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.easy.quality.inspecao.adapter.event.CreateInspecaoEvent;
+import br.com.easy.quality.inspecao.event.CreateInspecaoEvent;
 import br.com.easy.quality.inspecao.publish.TransactionalEventCreateInspecao;
 
 @Component("inspecaoWriteMessageAdapter")

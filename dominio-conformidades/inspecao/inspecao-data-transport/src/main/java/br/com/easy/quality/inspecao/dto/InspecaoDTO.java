@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class InspecaoDTO {
 
-	private String GUID;
+	private String guid;
 	private String titulo;
 	private Boolean status;
 	private String nomeColaboradorEntrevistador;

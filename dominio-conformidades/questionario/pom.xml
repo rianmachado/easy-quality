@@ -14,7 +14,6 @@
 		<module>questionario-data-transport</module>
 		<module>questionario-application</module>
 		<module>questionario-event</module>
-		<module>questionario-adapter-kafka</module>
 		
 	</modules>
 	<parent>

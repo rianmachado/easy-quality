@@ -1,4 +1,4 @@
-package br.com.easy.quality.form.subscribe;
+package br.com.easy.quality.form.event.subscribe;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,8 +6,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
 
-import br.com.easy.quality.form.adapter.event.ConsummerCreateInspecaoHandlerEvent;
-import br.com.easy.quality.form.adapter.event.ConsummerHandlerEvent;
+import br.com.easy.quality.form.event.message.Message;
 
 @Component
 public class TransactionalEventCreateInspecao {
@@ -23,7 +22,7 @@ public class TransactionalEventCreateInspecao {
 		try {
 
 			// Obiservability
-			var message = Menssagem.builder().body(itemEvent).build();
+			var message = Message.builder().body(itemEvent).build();
 			new ConsummerHandlerEvent(message);
 
 			consummerCreateInspecaoHandlerEvent.onEvent(message).thenRun(ack::acknowledge);
