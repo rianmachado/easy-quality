@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.write.in.commad;
+package br.com.easy.quality.form.event.publish.command;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateQuestionarioCommand extends SelfValidating<CreateQuestionarioCommand> implements Command {
+public class CreateQuestionarioPublishCommand extends SelfValidating<CreateQuestionarioPublishCommand>
+		implements Command {
 
 	@NotNull
 	private final String titulo;
@@ -28,8 +29,7 @@ public class CreateQuestionarioCommand extends SelfValidating<CreateQuestionario
 	@NotNull
 	private Boolean status = true;
 
-	public CreateQuestionarioCommand(QuestionarioDTO questionarioDTO) {
-
+	public CreateQuestionarioPublishCommand(QuestionarioDTO questionarioDTO) {
 		this.titulo = questionarioDTO.getTitulo();
 		this.status = questionarioDTO.getStatus();
 		if (questionarioDTO.getPerguntas() != null && !questionarioDTO.getPerguntas().isEmpty()) {

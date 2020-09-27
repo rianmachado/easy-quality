@@ -13,25 +13,19 @@ public abstract class ObservabilityEvent implements Event {
 	private long stopTime;
 
 	public enum Type {
-
 		COMMAND("Command"), QUERY("Query");
-
 		private String typeName;
 
 		Type(String typeName) {
 			this.typeName = typeName;
 		}
-
 		@Override
 		public String toString() {
 			return typeName;
 		}
 	}
 
-	
-
 	public Type getType() {
-
 		if (getOrigin().contains(COMMAND.toString()))
 			return COMMAND;
 		if (getOrigin().contains(QUERY.toString()))

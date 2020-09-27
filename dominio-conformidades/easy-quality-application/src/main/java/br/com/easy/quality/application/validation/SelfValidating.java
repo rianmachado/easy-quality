@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.write.in.validation;
+package br.com.easy.quality.application.validation;
 
 import java.util.Set;
 

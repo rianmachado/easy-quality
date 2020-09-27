@@ -38,9 +38,9 @@ public class ServiceBus {
 		var event = new CommandEvent(command);
 		execute(event);
 	}
+	
 
 	private void execute(ObservabilityEvent event) {
-
 		try {
 			run(event);
 		} catch (Exception exception) {

@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.inspecao.write.in.commad;
+package br.com.easy.quality.inspecao.event.publish.command;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateInspecaoCommand extends SelfValidating<CreateInspecaoCommand> implements Command {
+public class CreateInspecaoPublishCommand extends SelfValidating<CreateInspecaoPublishCommand> implements Command {
 
 	@NotNull
 	private final String titulo;
@@ -40,7 +40,7 @@ public class CreateInspecaoCommand extends SelfValidating<CreateInspecaoCommand>
 	@NotNull
 	private Questionario questionario;
 
-	public CreateInspecaoCommand(InspecaoDTO inspecaoDTO) {
+	public CreateInspecaoPublishCommand(InspecaoDTO inspecaoDTO) {
 		this.titulo = inspecaoDTO.getQuestionarioModelo().getTitulo();
 		this.status = inspecaoDTO.getStatus();
 		this.nomeColaboradorEntrevistador = inspecaoDTO.getNomeColaboradorEntrevistador();

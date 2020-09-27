@@ -25,7 +25,6 @@ public class LogListener {
 	@Async
 	@EventListener
 	void onEventOccur(ObservabilityEvent event) {
-
 		if (event.isSuccess()) {
 			if (logger.isInfoEnabled()) {
 				logger.info(event.toJson());
