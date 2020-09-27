@@ -6,8 +6,6 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
 
-import br.com.easy.quality.form.event.message.Message;
-
 @Component
 public class TransactionalEventCreateInspecao {
 
@@ -21,11 +19,7 @@ public class TransactionalEventCreateInspecao {
 		log.info("Received event {}. Trying to apply it to the latest state of aggregate with ID {}. " + itemEvent);
 		try {
 
-			// Obiservability
-			var message = Message.builder().body(itemEvent).build();
-			new ConsummerHandlerEvent(message);
-
-			consummerCreateInspecaoHandlerEvent.onEvent(message).thenRun(ack::acknowledge);
+			consummerCreateInspecaoHandlerEvent.onEvent(itemEvent).thenRun(ack::acknowledge);
 
 		} catch (Exception e) {
 			// log the exception and do *not* acknowledge the event

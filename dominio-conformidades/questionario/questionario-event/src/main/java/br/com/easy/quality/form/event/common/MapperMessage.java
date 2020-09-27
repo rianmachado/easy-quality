@@ -10,14 +10,12 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.easy.quality.form.event.message.Message;
-
 @Component
 public class MapperMessage {
-	public JsonNode mapToJson(Message message)  {
+	public JsonNode mapToJson(String message) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			return mapper.readTree(message.getBody());
+			return mapper.readTree(message);
 		} catch (JsonMappingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -25,6 +23,7 @@ public class MapperMessage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		// (IMPORTANTE)TODO: REVER ESSE RETORNO
 		return null;
 	}
 

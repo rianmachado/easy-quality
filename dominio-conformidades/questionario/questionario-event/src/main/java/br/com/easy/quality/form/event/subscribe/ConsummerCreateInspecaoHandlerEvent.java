@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.form.event.common.MapperMessage;
 import br.com.easy.quality.form.event.message.Message;
+import br.com.easy.quality.form.event.publish.TransactionalEventQuestionario;
 import br.com.easy.quality.form.read.in.query.IdQuestionarioQuery;
 import br.com.easy.quality.form.read.in.resolver.IdQuestionarioResolver;
 
@@ -17,12 +18,24 @@ public class ConsummerCreateInspecaoHandlerEvent {
 	private IdQuestionarioResolver idQuestionarioResolver;
 
 	@Autowired
+	TransactionalEventQuestionario transactionalEventQuestionario;
+
+	@Autowired
 	private MapperMessage mapperMessage;
 
-	public CompletableFuture<Void> onEvent(final Message message) {
+	public CompletableFuture<Void> onEvent(final String message) {
 		return CompletableFuture.runAsync(() -> {
+
+			// Obiservability
+			var messageContent = Message.builder().body(message).build();
+			new ConsummerHandlerEvent(messageContent);
+
 			var guidQuestionario = mapperMessage.mapToJson(message).get("questionario").get("guid").asText();
-			idQuestionarioResolver.resolve(IdQuestionarioQuery.builder().id(guidQuestionario).build());
+			var query = IdQuestionarioQuery.builder().id(guidQuestionario).build();
+			idQuestionarioResolver.resolve(query);
+			
+			//CreateQuestionarioCommand 
+
 		});
 	}
 

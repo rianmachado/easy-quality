@@ -12,7 +12,6 @@
 		<module>inspecao-domain</module>
 		<module>inspecao-adapter-mongo</module>
 		<module>inspecao-data-transport</module>
-		<module>inspecao-application</module>
 		<module>inspecao-event</module>
 
 	</modules>

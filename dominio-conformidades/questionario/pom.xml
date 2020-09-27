@@ -12,7 +12,6 @@
 		<module>questionario-domain</module>
 		<module>questionario-adapter-mongo</module>
 		<module>questionario-data-transport</module>
-		<module>questionario-application</module>
 		<module>questionario-event</module>
 		
 	</modules>

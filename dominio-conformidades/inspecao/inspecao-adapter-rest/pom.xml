@@ -15,10 +15,22 @@
 
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>inspecao-application</artifactId>
+			<artifactId>easy-quality-application</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>inspecao-read</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>inspecao-write</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<dependency>
 			<groupId>easy.quality</groupId>
 			<artifactId>inspecao-data-transport</artifactId>
