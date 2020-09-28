@@ -1,43 +1,44 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.event.common;
+package br.com.easy.quality.inspecao.event.common;
 
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import br.com.easy.quality.dto.QuestionarioDTO;
+import br.com.easy.quality.inspecao.dto.InspecaoDTO;
 
 @Component
 public class MapperMessage {
-
-	// TODO: REVER TRATATIVA NESSE MAP(TRATAMENTO DE ERRO)
 	public JsonNode mapToJson(String message) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			return mapper.readTree(message);
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		// (IMPORTANTE)TODO: REVER ESSE RETORNO
 		return null;
 	}
 
 	// TODO: REVER TRATATIVA NESSE MAP(TRATAMENTO DE ERRO)
-	public JsonNode updateJSON(final JsonNode body, final JsonNode questionario) {
-		((ObjectNode) body).put("questionarioModelo", questionario);
-		return body;
-
-	}
-
-	// TODO: REVER TRATATIVA NESSE MAP(TRATAMENTO DE ERRO)
-	public JsonNode mapToJSON(final QuestionarioDTO questionarioDTO) {
+	public InspecaoDTO mapToInspecaoDTO(String body) {
+		InspecaoDTO inspecao = null;
 		ObjectMapper mapper = new ObjectMapper();
-		JsonNode json = mapper.valueToTree(questionarioDTO);
-		return json;
+		try {
+			inspecao = mapper.readValue(body, InspecaoDTO.class);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		return inspecao;
 	}
 
 }

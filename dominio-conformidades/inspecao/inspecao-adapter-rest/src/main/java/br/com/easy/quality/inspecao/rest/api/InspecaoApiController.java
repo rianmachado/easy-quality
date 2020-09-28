@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.easy.quality.application.service.ServiceBus;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
-import br.com.easy.quality.inspecao.read.in.query.IdInspecaoQuery;
-import br.com.easy.quality.inspecao.read.in.query.ListAllInspecaoQuery;
-import br.com.easy.quality.inspecao.write.in.commad.CreateInspecaoCommand;
+import br.com.easy.quality.inspecao.event.read.in.query.IdInspecaoQuery;
+import br.com.easy.quality.inspecao.event.read.in.query.ListAllInspecaoQuery;
+import br.com.easy.quality.inspecao.event.write.in.commad.CreateInspecaoCommand;
 import io.swagger.annotations.ApiParam;
 
 @Controller

@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.read.in.resolver;
+package br.com.easy.quality.form.eventeread.in.resolver;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
 import br.com.easy.quality.event.query.Resolver;
-import br.com.easy.quality.form.read.in.query.ListAllQuestionarioQuery;
+import br.com.easy.quality.form.evente.read.in.query.ListAllQuestionarioQuery;
 import br.com.easy.quality.form.read.out.QuestionarioReadDataBaseAdapter;
 
 @Component

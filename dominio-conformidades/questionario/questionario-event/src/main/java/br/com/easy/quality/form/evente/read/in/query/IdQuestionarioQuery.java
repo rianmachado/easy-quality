@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.read.in.query;
+package br.com.easy.quality.form.evente.read.in.query;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
 import br.com.easy.quality.event.query.Query;

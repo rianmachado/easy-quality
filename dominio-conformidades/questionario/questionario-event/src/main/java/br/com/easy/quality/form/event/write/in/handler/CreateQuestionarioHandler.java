@@ -1,15 +1,15 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.write.in.handler;
+package br.com.easy.quality.form.event.write.in.handler;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.easy.quality.event.command.Handler;
 import br.com.easy.quality.form.domain.Questionario;
+import br.com.easy.quality.form.event.write.in.commad.CreateQuestionarioCommand;
 import br.com.easy.quality.form.write.in.CriarQuestionarioUseCase;
-import br.com.easy.quality.form.write.in.commad.CreateQuestionarioCommand;
 
 @Service
 public class CreateQuestionarioHandler implements Handler<CreateQuestionarioCommand> {

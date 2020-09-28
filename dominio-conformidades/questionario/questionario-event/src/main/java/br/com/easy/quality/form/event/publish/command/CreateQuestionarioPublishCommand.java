@@ -3,15 +3,10 @@
  */
 package br.com.easy.quality.form.event.publish.command;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.validation.constraints.NotNull;
 
 import br.com.easy.quality.application.validation.SelfValidating;
-import br.com.easy.quality.dto.QuestionarioDTO;
 import br.com.easy.quality.event.command.Command;
-import br.com.easy.quality.form.domain.Pergunta;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,23 +16,10 @@ public class CreateQuestionarioPublishCommand extends SelfValidating<CreateQuest
 		implements Command {
 
 	@NotNull
-	private final String titulo;
+	private final String body;
 
-	@NotNull
-	private final List<Pergunta> perguntas = new ArrayList<Pergunta>();
-
-	@NotNull
-	private Boolean status = true;
-
-	public CreateQuestionarioPublishCommand(QuestionarioDTO questionarioDTO) {
-		this.titulo = questionarioDTO.getTitulo();
-		this.status = questionarioDTO.getStatus();
-		if (questionarioDTO.getPerguntas() != null && !questionarioDTO.getPerguntas().isEmpty()) {
-			questionarioDTO.getPerguntas().stream().forEach(item -> {
-				perguntas.add(new Pergunta(item.getDescricao(), null));
-
-			});
-		}
+	public CreateQuestionarioPublishCommand(String body) {
+		this.body = body;
 		validateSelf();
 	}
 

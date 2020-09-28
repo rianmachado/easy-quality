@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.easy.quality.application.service.ServiceBus;
 import br.com.easy.quality.dto.QuestionarioDTO;
-import br.com.easy.quality.form.read.in.query.IdQuestionarioQuery;
-import br.com.easy.quality.form.read.in.query.ListAllQuestionarioQuery;
-import br.com.easy.quality.form.write.in.commad.CreateQuestionarioCommand;
+import br.com.easy.quality.form.event.write.in.commad.CreateQuestionarioCommand;
+import br.com.easy.quality.form.evente.read.in.query.IdQuestionarioQuery;
+import br.com.easy.quality.form.evente.read.in.query.ListAllQuestionarioQuery;
 import io.swagger.annotations.ApiParam;
 
 @Controller

@@ -30,6 +30,12 @@
 			<artifactId>questionario-read</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+			<dependency>
+			<groupId>easy.quality</groupId>
+			<artifactId>questionario-write</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>easy.quality</groupId>

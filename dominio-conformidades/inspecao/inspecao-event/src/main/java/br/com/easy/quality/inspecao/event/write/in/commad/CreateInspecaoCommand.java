@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.inspecao.write.in.commad;
+package br.com.easy.quality.inspecao.event.write.in.commad;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,0 +1,29 @@
+package br.com.easy.quality.inspecao.event.subscribe;
+
+import java.util.concurrent.CompletableFuture;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import br.com.easy.quality.application.service.ServiceBus;
+import br.com.easy.quality.inspecao.event.common.MapperMessage;
+import br.com.easy.quality.inspecao.event.write.in.commad.CreateInspecaoCommand;
+
+@Component
+public class ConsummerQuestionarioHandlerEvent {
+
+	@Autowired
+	private ServiceBus serviceBus;
+
+	@Autowired
+	private MapperMessage mapperMessage;
+
+	public CompletableFuture<Void> onEvent(final String message) {
+		return CompletableFuture.runAsync(() -> {
+			var inspecaoComQuestionarioModeloPreenchido = mapperMessage.mapToInspecaoDTO(message);
+			var createInspecaoCommand = new CreateInspecaoCommand(inspecaoComQuestionarioModeloPreenchido);
+			serviceBus.execute(createInspecaoCommand);
+		});
+	}
+
+}

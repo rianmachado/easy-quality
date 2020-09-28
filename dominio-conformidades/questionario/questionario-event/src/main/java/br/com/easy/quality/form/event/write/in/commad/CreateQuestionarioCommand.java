@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.write.in.commad;
+package br.com.easy.quality.form.event.write.in.commad;
 
 import java.util.ArrayList;
 import java.util.List;
