@@ -7,21 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.easy.quality.inspecao.domain.Inspecao;
-import br.com.easy.quality.inspecao.write.out.InspecaoWriteDataBaseAdapter;
+import br.com.easy.quality.inspecao.write.out.InspecaoPersistenceWrite;
 
 @Service
 public class CriarInspecaoUseCase {
 
 	@Autowired
-	private InspecaoWriteDataBaseAdapter InspecaoWriteDataBaseAdapter;
+	private InspecaoPersistenceWrite inspecaoPesistence;
 
 	public void saveInspecao(Inspecao inspecao) {
-		
-		//TODO:
-		//OBTER O QUESTIONARIO TEMPLATE e SETAR DATA/HORA NO dataDeUsoQuestionarioModelo
-		
-		
-		InspecaoWriteDataBaseAdapter.saveInspecao(inspecao);
+
+		// TODO:
+		// OBTER O QUESTIONARIO TEMPLATE e SETAR DATA/HORA NO
+		// dataDeUsoQuestionarioModelo
+
+		inspecaoPesistence.saveInspecao(inspecao);
 	}
 
 }

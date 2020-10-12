@@ -9,16 +9,16 @@ import org.springframework.stereotype.Component;
 import br.com.easy.quality.event.query.Resolver;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
 import br.com.easy.quality.inspecao.event.read.in.query.IdInspecaoQuery;
-import br.com.easy.quality.inspecao.read.out.InspecaoReadDataBaseAdapter;
+import br.com.easy.quality.inspecao.read.in.ReadInspecaoUseCase;
 
 @Component
 public class IdInspecaoResolver implements Resolver<IdInspecaoQuery> {
 
 	@Autowired
-	private InspecaoReadDataBaseAdapter inspecaoReadDataBaseAdapter;
+	private ReadInspecaoUseCase readInspecaoUseCase;
 
 	public void resolve(IdInspecaoQuery query) {
-		InspecaoDTO result = inspecaoReadDataBaseAdapter.getById(query.getId()).get();
+		InspecaoDTO result = readInspecaoUseCase.obterInspecao(query.getId());
 		query.setResult(result);
 	}
 }

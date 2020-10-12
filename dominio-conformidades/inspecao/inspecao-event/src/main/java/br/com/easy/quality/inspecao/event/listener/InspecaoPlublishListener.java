@@ -9,18 +9,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-
+import org.springframework.beans.factory.annotation.Qualifier;
 import br.com.easy.quality.event.PublishEvent;
+import br.com.easy.quality.event.PublishMessage;
 import br.com.easy.quality.event.Exception.DomainException;
-import br.com.easy.quality.inspecao.publish.TransactionalEventCreateInspecao;
 
 @Component
-public class PlublishListener {
+public class InspecaoPlublishListener {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private TransactionalEventCreateInspecao transactionalEventCreateInspecao;
+	@Qualifier("transactionalEventCreateInspecao")
+	private PublishMessage publishMessage;
 
 	@Async
 	@EventListener
@@ -28,7 +29,7 @@ public class PlublishListener {
 		if (publishEvent.isSuccess()) {
 			if (logger.isInfoEnabled()) {
 				logger.info(publishEvent.toJson());
-				transactionalEventCreateInspecao.registrar(publishEvent);
+				publishMessage.publicar(publishEvent);
 			}
 
 		} else if (publishEvent.getException() instanceof DomainException) {

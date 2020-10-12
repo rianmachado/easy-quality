@@ -1,4 +1,4 @@
-package br.com.easy.quality.inspecao.event.subscribe;
+package br.com.easy.quality.inspecao.adapter.kafka.subscribe;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

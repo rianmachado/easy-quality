@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
 
-public interface InspecaoReadDataBase {
+public interface InspecaoPersistenceRead {
 
 	Optional<List<InspecaoDTO>> getAll();
 

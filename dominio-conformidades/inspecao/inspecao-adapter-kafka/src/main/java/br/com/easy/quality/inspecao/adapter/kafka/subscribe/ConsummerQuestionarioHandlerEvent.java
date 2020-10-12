@@ -1,4 +1,4 @@
-package br.com.easy.quality.inspecao.event.subscribe;
+package br.com.easy.quality.inspecao.adapter.kafka.subscribe;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.application.service.ServiceBus;
-import br.com.easy.quality.inspecao.event.common.MapperMessage;
+import br.com.easy.quality.inspecao.adapter.kafka.Mapper.MapperMessage;
 import br.com.easy.quality.inspecao.event.write.in.commad.CreateInspecaoCommand;
 
 @Component
