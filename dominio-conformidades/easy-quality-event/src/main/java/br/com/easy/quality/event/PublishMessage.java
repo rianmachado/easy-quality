@@ -3,8 +3,8 @@
  */
 package br.com.easy.quality.event;
 
-public interface EventStore  {
+public interface PublishMessage  {
 
-	void registrar(Event event) ;
+	void publicar(Event event) ;
 	
 }

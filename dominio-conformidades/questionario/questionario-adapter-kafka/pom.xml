@@ -2,33 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<parent>
 		<artifactId>ms-questionario</artifactId>
 		<groupId>easy.quality</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>questionario-write</artifactId>
-
+	<artifactId>questionario-adapter-kafka</artifactId>
 	<dependencies>
+
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>questionario-domain</artifactId>
+			<artifactId>questionario-event</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>easy.quality</groupId>
-			<artifactId>questionario-data-transport</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-		</dependency>
+
 
 	</dependencies>
 

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
 
-public interface QuestionarioReadDataBase {
+public interface QuestionarioPersistenceRead {
 
 	Optional<List<QuestionarioDTO>> getAll();
 

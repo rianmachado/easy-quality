@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.read.common;
+package br.com.easy.quality.form.adapter.mongo.mapper;
 
 import java.util.ArrayList;
 import java.util.List;

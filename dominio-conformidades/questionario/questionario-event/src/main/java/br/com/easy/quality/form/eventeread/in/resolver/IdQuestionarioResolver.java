@@ -9,16 +9,16 @@ import org.springframework.stereotype.Component;
 import br.com.easy.quality.dto.QuestionarioDTO;
 import br.com.easy.quality.event.query.Resolver;
 import br.com.easy.quality.form.evente.read.in.query.IdQuestionarioQuery;
-import br.com.easy.quality.form.read.out.QuestionarioReadDataBaseAdapter;
+import br.com.easy.quality.form.read.in.ReadQuestionarioUseCase;
 
 @Component
 public class IdQuestionarioResolver implements Resolver<IdQuestionarioQuery> {
 
 	@Autowired
-	private QuestionarioReadDataBaseAdapter questionarioVerificacaoDataBaseAdapter;
+	private ReadQuestionarioUseCase readQuestionarioUseCase;
 
 	public void resolve(IdQuestionarioQuery query) {
-		QuestionarioDTO result = questionarioVerificacaoDataBaseAdapter.getById(query.getId()).get();
+		QuestionarioDTO result = readQuestionarioUseCase.obterQuestionario(query.getId());
 		query.setResult(result);
 	}
 }

@@ -1,4 +1,4 @@
-package br.com.easy.quality.form.event.subscribe;
+package br.com.easy.quality.questionario.adapter.kafka.subscribe;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

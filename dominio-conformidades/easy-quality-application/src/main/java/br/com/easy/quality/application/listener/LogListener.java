@@ -28,7 +28,7 @@ public class LogListener {
 		if (event.isSuccess()) {
 			if (logger.isInfoEnabled()) {
 				logger.info(event.toJson());
-				transactionalEventObservability.registrar(event);
+				transactionalEventObservability.publicar(event);
 			}
 
 		} else if (event.getException() instanceof DomainException) {

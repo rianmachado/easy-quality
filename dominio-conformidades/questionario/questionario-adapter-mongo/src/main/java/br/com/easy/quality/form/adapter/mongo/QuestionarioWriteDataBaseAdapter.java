@@ -1,17 +1,18 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.write.out;
+package br.com.easy.quality.form.adapter.mongo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import br.com.easy.quality.form.adapter.mongo.mapper.QuestionarioWriteMapper;
 import br.com.easy.quality.form.adapter.mongo.repository.QuestionarioRepositoryCustom;
 import br.com.easy.quality.form.domain.Questionario;
-import br.com.easy.quality.form.write.common.QuestionarioWriteMapper;
+import br.com.easy.quality.form.write.out.QuestionarioPersistenceWrite;
 
 @Component
-public class QuestionarioWriteDataBaseAdapter implements QuestionarioWriteDataBase {
+public class QuestionarioWriteDataBaseAdapter implements QuestionarioPersistenceWrite {
 
 	@Autowired
 	private QuestionarioRepositoryCustom formVerificacaoRepositoryCustom;

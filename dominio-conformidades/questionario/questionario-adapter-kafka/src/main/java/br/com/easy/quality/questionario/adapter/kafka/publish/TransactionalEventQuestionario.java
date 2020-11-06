@@ -2,7 +2,7 @@
  * @author rianmachado@gmail.com
  */
 
-package br.com.easy.quality.form.event.publish;
+package br.com.easy.quality.questionario.adapter.kafka.publish;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,10 +13,10 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.event.Event;
-import br.com.easy.quality.event.EventStore;
+import br.com.easy.quality.event.PublishMessage;
 
-@Component
-public class TransactionalEventQuestionario implements EventStore {
+@Component("transactionalEventQuestionario")
+public class TransactionalEventQuestionario implements PublishMessage {
 
 	private static final Logger log = LoggerFactory.getLogger(TransactionalEventQuestionario.class);
 
@@ -32,7 +32,7 @@ public class TransactionalEventQuestionario implements EventStore {
 	}
 
 	@Override
-	public void registrar(final Event event) {
+	public void publicar(final Event event) {
 		log.info("Attempting to log {} to topic {}.", event, topicName);
 		kafkaTemplate.executeInTransaction(operations -> {
 			final String key = event.obterGUID();

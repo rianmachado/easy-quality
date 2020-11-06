@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.read.out;
+package br.com.easy.quality.form.adapter.mongo;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,13 +11,14 @@ import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.dto.QuestionarioDTO;
 import br.com.easy.quality.form.adapter.mongo.entity.QuestionarioEntity;
+import br.com.easy.quality.form.adapter.mongo.mapper.QuestionarioReadMapper;
 import br.com.easy.quality.form.adapter.mongo.repository.QuestionarioRepositoryCustom;
 import br.com.easy.quality.form.domain.exception.CodeDomainMessage;
 import br.com.easy.quality.form.domain.exception.DomainException;
-import br.com.easy.quality.form.read.common.QuestionarioReadMapper;
+import br.com.easy.quality.form.read.out.QuestionarioPersistenceRead;
 
 @Component
-public class QuestionarioReadDataBaseAdapter implements QuestionarioReadDataBase {
+public class QuestionarioReadDataBaseAdapter implements QuestionarioPersistenceRead {
 
 	@Autowired
 	private QuestionarioRepositoryCustom formVerificacaoRepositoryCustom;

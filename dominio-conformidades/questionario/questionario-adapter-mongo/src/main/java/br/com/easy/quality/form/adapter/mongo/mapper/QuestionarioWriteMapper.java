@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.write.common;
+package br.com.easy.quality.form.adapter.mongo.mapper;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;

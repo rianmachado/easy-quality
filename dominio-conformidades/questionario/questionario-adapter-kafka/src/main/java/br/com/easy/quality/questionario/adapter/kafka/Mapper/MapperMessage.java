@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.form.event.common;
+package br.com.easy.quality.questionario.adapter.kafka.Mapper;
 
 import org.springframework.stereotype.Component;
 

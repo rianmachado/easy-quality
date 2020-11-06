@@ -13,10 +13,10 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.event.Event;
-import br.com.easy.quality.event.EventStore;
+import br.com.easy.quality.event.PublishMessage;
 
 @Component
-public class TransactionalEventObservability implements EventStore {
+public class TransactionalEventObservability implements PublishMessage {
 
 	private static final Logger log = LoggerFactory.getLogger(TransactionalEventObservability.class);
 
@@ -36,7 +36,7 @@ public class TransactionalEventObservability implements EventStore {
 	}
 
 	@Override
-	public void registrar(final Event event) {
+	public void publicar(final Event event) {
 		log.info("Attempting to log {} to topic {}.", event, topicName);
 		kafkaTemplate.executeInTransaction(operations -> {
 			final String key = event.obterGUID();

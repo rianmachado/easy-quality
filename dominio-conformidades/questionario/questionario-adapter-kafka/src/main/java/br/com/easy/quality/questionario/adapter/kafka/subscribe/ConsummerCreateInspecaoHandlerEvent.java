@@ -1,4 +1,4 @@
-package br.com.easy.quality.form.event.subscribe;
+package br.com.easy.quality.questionario.adapter.kafka.subscribe;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.application.service.ServiceBus;
-import br.com.easy.quality.form.event.common.MapperMessage;
 import br.com.easy.quality.form.event.publish.command.CreateQuestionarioPublishCommand;
 import br.com.easy.quality.form.evente.read.in.query.IdQuestionarioQuery;
+import br.com.easy.quality.questionario.adapter.kafka.Mapper.MapperMessage;
 
 @Component
 public class ConsummerCreateInspecaoHandlerEvent {
