@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 import br.com.easy.quality.event.Event;
 import br.com.easy.quality.event.PublishMessage;
 
-@Component("transactionalEventQuestionario")
+@Component(value = "transactionalEventQuestionario")
 public class TransactionalEventQuestionario implements PublishMessage {
 
 	private static final Logger log = LoggerFactory.getLogger(TransactionalEventQuestionario.class);
@@ -25,7 +25,7 @@ public class TransactionalEventQuestionario implements PublishMessage {
 	private final KafkaTemplate<String, String> kafkaTemplate;
 
 	@Autowired
-	public TransactionalEventQuestionario(@Value("${xxxxxxxxx.questionatio.topic}") final String topicName,
+	public TransactionalEventQuestionario(@Value("${custonKafka.integration.cadastro.inspecao.questionario-enriquecido}") final String topicName,
 			final KafkaTemplate<String, String> kafkaTemplate) {
 		this.topicName = topicName;
 		this.kafkaTemplate = kafkaTemplate;

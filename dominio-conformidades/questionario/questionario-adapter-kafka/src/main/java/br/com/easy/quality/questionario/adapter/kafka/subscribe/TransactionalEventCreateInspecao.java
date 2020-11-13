@@ -13,7 +13,7 @@ public class TransactionalEventCreateInspecao {
 
 	private ConsummerCreateInspecaoHandlerEvent consummerCreateInspecaoHandlerEvent;
 
-	@KafkaListener(topics = "${custonKafka.integration.cadastro.inspecao.questionario}", groupId = "${kafka.consumer.groupId}")
+	@KafkaListener(topics = "${custonKafka.integration.cadastro.inspecao.questionario}", groupId = "${spring.kafka.consumer.groupId}")
 	public void consume(final String itemEvent, final Acknowledgment ack) {
 
 		log.info("Received event {}. Trying to apply it to the latest state of aggregate with ID {}. " + itemEvent);

@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = { "br.com.easy.quality.form.*" })
+@ComponentScan(basePackages = { "br.com.easy.quality.*", "br.com.easy.quality.form.write.*"})
 @EnableMongoRepositories(basePackages = "br.com.easy.quality.form.adapter.mongo.repository")
 @EnableAsync
 public class ApplicationLauncher {

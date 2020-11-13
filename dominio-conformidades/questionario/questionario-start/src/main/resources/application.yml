@@ -7,7 +7,7 @@ logging:
             core:
               MongoTemplate: DEBUG
 server:
-  port: 8081
+  port: 8082
   servlet:
     context-path: /conformidade/v1
 spring:
@@ -27,7 +27,7 @@ spring:
       bootstrap-servers: localhost:9092
       groupId: group-integration-cadastro-inspecao-questionario
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
-      valueDeserializer: net.mguenther.gtd.kafka.serialization.ItemEventDeserializer
+      valueDeserializer: org.apache.kafka.common.serialization.StringSerializer
       autoOffsetReset: earliest
       enableAutoCommit: false
       isolationLevel: read-committed
@@ -41,8 +41,8 @@ custonKafka:
   integration:
      cadastro:
       inspecao:
-        questionario: topic-integration-cadastro-inspecao-questionario    
-      
+        questionario: topic-integration-cadastro-inspecao-questionario
+        questionario-enriquecido: topic-integration-cadastro-inspecao-questionario-enriquecido     
            
     
 springfox:

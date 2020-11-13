@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.easy.quality.application.service.ServiceBus;
+import br.com.easy.quality.command.CreateQuestionarioCommand;
 import br.com.easy.quality.dto.QuestionarioDTO;
-import br.com.easy.quality.form.event.write.in.commad.CreateQuestionarioCommand;
-import br.com.easy.quality.form.evente.read.in.query.IdQuestionarioQuery;
-import br.com.easy.quality.form.evente.read.in.query.ListAllQuestionarioQuery;
+import br.com.easy.quality.query.IdQuestionarioQuery;
+import br.com.easy.quality.query.ListAllQuestionarioQuery;
 import io.swagger.annotations.ApiParam;
 
 @Controller
