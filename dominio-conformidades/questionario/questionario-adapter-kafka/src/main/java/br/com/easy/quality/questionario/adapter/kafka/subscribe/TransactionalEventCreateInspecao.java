@@ -11,7 +11,7 @@ public class TransactionalEventCreateInspecao {
 
 	private static final Logger log = LoggerFactory.getLogger(TransactionalEventCreateInspecao.class);
 
-	private ConsummerCreateInspecaoHandlerEvent consummerCreateInspecaoHandlerEvent;
+	private CreateInspecaoHandlerEvent consummerCreateInspecaoHandlerEvent;
 
 	@KafkaListener(topics = "${custonKafka.integration.cadastro.inspecao.questionario}", groupId = "${spring.kafka.consumer.groupId}")
 	public void consume(final String itemEvent, final Acknowledgment ack) {

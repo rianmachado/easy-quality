@@ -1,5 +1,5 @@
 /**
- * @author rianmachado@gmail.com
+Os * @author rianmachado@gmail.com
  */
 package br.com.easy.quality.questionario.adapter.kafka.Mapper;
 
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import br.com.easy.quality.dto.QuestionarioDTO;
+import br.com.easy.quality.questionario.dto.QuestionarioDTO;
 
 @Component
 public class MapperMessage {

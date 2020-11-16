@@ -18,7 +18,7 @@
 		</dependency>
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>questionario-data-transport</artifactId>
+			<artifactId>questionario-command-query</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>

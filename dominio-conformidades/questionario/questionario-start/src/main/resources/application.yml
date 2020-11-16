@@ -27,23 +27,21 @@ spring:
       bootstrap-servers: localhost:9092
       groupId: group-integration-cadastro-inspecao-questionario
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
-      valueDeserializer: org.apache.kafka.common.serialization.StringSerializer
+      valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer
       autoOffsetReset: earliest
       enableAutoCommit: false
       isolationLevel: read-committed
     listener:
       ackMode: MANUAL  
       
+
 custonKafka:
-  loggin:
-    questionatio:
-      topic: topic-logs-events-formulario-done
   integration:
      cadastro:
       inspecao:
         questionario: topic-integration-cadastro-inspecao-questionario
-        questionario-enriquecido: topic-integration-cadastro-inspecao-questionario-enriquecido     
-           
+        questionario-enriquecido: topic-integration-cadastro-inspecao-questionario-enriquecido
+      
     
 springfox:
   documentation:

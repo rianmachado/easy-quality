@@ -11,8 +11,8 @@
 		<module>inspecao-write</module>
 		<module>inspecao-domain</module>
 		<module>inspecao-adapter-mongo</module>
-		<module>inspecao-data-transport</module>
-		<module>inspecao-event</module>
+		<module>inspecao-command-query</module>
+		<module>inspecao-handlers-resolver</module>
 		<module>inspecao-adapter-kafka</module>
 
 	</modules>

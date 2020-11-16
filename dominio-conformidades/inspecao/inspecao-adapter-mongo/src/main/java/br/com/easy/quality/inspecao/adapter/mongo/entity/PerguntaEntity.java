@@ -10,10 +10,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class PerguntaEntity {
-
-
 	private String descricao;
-
 	private String resposta;
-
 }

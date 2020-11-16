@@ -29,5 +29,6 @@ public enum CodeDomainMessage implements CodeMsg {
 	public int getCodeError() {
 		return codeError;
 	}
+	
 
 }

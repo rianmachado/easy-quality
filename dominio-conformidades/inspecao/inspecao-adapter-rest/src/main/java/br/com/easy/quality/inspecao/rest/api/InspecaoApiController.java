@@ -19,11 +19,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import br.com.easy.quality.application.service.ServiceBus;
+import br.com.easy.quality.bus.service.ServiceBus;
+import br.com.easy.quality.inspecao.command.CreateInspecaoCommand;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
-import br.com.easy.quality.inspecao.event.read.in.query.IdInspecaoQuery;
-import br.com.easy.quality.inspecao.event.read.in.query.ListAllInspecaoQuery;
-import br.com.easy.quality.inspecao.event.write.in.commad.CreateInspecaoCommand;
+import br.com.easy.quality.inspecao.query.IdInspecaoQuery;
+import br.com.easy.quality.inspecao.query.ListAllInspecaoQuery;
 import io.swagger.annotations.ApiParam;
 
 @Controller

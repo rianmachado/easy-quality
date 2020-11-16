@@ -11,6 +11,7 @@
 	<artifactId>inspecao-read</artifactId>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>easy.quality</groupId>
 			<artifactId>inspecao-domain</artifactId>
@@ -18,21 +19,13 @@
 		</dependency>
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>inspecao-data-transport</artifactId>
+			<artifactId>inspecao-command-query</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>1.9.3</version>
-		</dependency>
-
 
 	</dependencies>
 </project>

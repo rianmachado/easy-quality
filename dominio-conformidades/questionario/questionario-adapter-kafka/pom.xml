@@ -26,7 +26,7 @@
 
 		<dependency>
 			<groupId>easy.quality</groupId>
-			<artifactId>easy-quality-application</artifactId>
+			<artifactId>easy-quality-bus</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

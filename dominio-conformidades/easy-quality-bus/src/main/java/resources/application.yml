@@ -1,0 +1,3 @@
+custonKafka:
+  observability:
+    easy-quality-topic: logs-events-easy-quality

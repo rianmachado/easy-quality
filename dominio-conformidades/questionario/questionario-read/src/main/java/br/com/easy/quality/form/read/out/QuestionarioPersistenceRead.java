@@ -6,7 +6,7 @@ package br.com.easy.quality.form.read.out;
 import java.util.List;
 import java.util.Optional;
 
-import br.com.easy.quality.dto.QuestionarioDTO;
+import br.com.easy.quality.questionario.dto.QuestionarioDTO;
 
 public interface QuestionarioPersistenceRead {
 
