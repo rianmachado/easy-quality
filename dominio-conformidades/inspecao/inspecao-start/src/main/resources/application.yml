@@ -39,7 +39,9 @@ custonKafka:
       inspecao:
         questionario: topic-integration-cadastro-inspecao-questionario
         questionario-enriquecido: topic-integration-cadastro-inspecao-questionario-enriquecido
-        
+  observability:
+    easy-quality-topic: logs-events-easy-quality
+
               
 springfox:
   documentation:

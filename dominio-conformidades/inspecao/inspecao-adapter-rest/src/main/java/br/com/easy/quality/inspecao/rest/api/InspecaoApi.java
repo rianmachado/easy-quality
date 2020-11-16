@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-@Api(value = "inspecaos", description = "the inspecaos API")
+@Api(value = "inspecoes", description = "the inspecoes API")
 public interface InspecaoApi {
 
 	@ApiOperation(value = "Criar Inspecao", nickname = "criarInspecao", notes = "", tags = { "inspecao", })

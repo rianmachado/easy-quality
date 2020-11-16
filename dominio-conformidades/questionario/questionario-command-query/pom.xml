@@ -21,16 +21,17 @@
 		</dependency>
 
 		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+
 
 		<dependency>
 			<groupId>easy.quality</groupId>
 			<artifactId>questionario-domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>easy.quality</groupId>
 			<artifactId>easy-quality-event</artifactId>

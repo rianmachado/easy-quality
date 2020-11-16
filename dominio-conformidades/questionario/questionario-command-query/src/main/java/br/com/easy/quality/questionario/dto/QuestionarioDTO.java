@@ -15,7 +15,6 @@ public class QuestionarioDTO {
 	private String id;
 	private String titulo;
 	private Boolean status;
-	private String nomeColaborador;
 	private List<PerguntaDTO> perguntas;
 	private LocalDateTime dataCriacao;
 	private LocalDateTime dataEdicao;

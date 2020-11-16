@@ -10,5 +10,4 @@ import lombok.Setter;
 @Setter
 public class PerguntaDTO {
 	private String descricao;
-	private String opcaoResposta;
 }

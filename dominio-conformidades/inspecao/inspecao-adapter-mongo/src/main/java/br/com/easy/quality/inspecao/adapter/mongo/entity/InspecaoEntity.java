@@ -7,15 +7,11 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Data
+@Getter
+@Setter
 @Document("Inspecao")
 public class InspecaoEntity {
 
@@ -44,5 +40,6 @@ public class InspecaoEntity {
 	private LocalDateTime dataDeUsoQuestionarioModelo;
 
 	private QuestionarioEntity questionarioEntity;
+	
 
 }

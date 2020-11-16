@@ -11,6 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class QuestionarioDTO {
+	private String guid;
 	private String titulo;
 	private List<PerguntaDTO> perguntas;
 }

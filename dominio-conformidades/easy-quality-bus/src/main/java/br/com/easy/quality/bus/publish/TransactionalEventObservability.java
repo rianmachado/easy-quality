@@ -29,7 +29,7 @@ public class TransactionalEventObservability implements PublishMessage {
 
 	
 	@Autowired
-	public TransactionalEventObservability(@Value("${custonKafka.observability. easy-quality-topic}") final String topicName,
+	public TransactionalEventObservability(@Value("${custonKafka.observability.easy-quality-topic}") final String topicName,
 			final KafkaTemplate<String, String> kafkaTemplate) {
 		this.topicName = topicName;
 		this.kafkaTemplate = kafkaTemplate;

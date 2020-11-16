@@ -29,7 +29,6 @@ public class CreateQuestionarioCommand extends SelfValidating<CreateQuestionario
 	private Boolean status = true;
 
 	public CreateQuestionarioCommand(QuestionarioDTO questionarioDTO) {
-
 		this.titulo = questionarioDTO.getTitulo();
 		this.status = questionarioDTO.getStatus();
 		if (questionarioDTO.getPerguntas() != null && !questionarioDTO.getPerguntas().isEmpty()) {
