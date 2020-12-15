@@ -1,4 +1,4 @@
-package br.com.easy.quality.questionario.adapter.kafka.subscribe;
+package br.com.easy.quality.inspecao.adapter.kafka.subscribe;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,20 +7,18 @@ import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TransactionalEventCreateInspecao {
+public class EventRecuperaQuestionario {
 
-	private static final Logger log = LoggerFactory.getLogger(TransactionalEventCreateInspecao.class);
+	private static final Logger log = LoggerFactory.getLogger(EventRecuperaQuestionario.class);
 
-	private CreateInspecaoHandlerEvent consummerCreateInspecaoHandlerEvent;
+	private HandlerEventRecuperaQuestionario consummerQuestionarioHandlerEvent;
 
-	@KafkaListener(topics = "${custonKafka.integration.cadastro.inspecao.questionario}", groupId = "${spring.kafka.consumer.groupId}")
+	@KafkaListener(topics = "${custonKafka.entregas.questionarios}", groupId = "${spring.kafka.consumer.groupId}")
 	public void consume(final String itemEvent, final Acknowledgment ack) {
 
 		log.info("Received event {}. Trying to apply it to the latest state of aggregate with ID {}. " + itemEvent);
 		try {
-
-			consummerCreateInspecaoHandlerEvent.onEvent(itemEvent).thenRun(ack::acknowledge);
-
+			consummerQuestionarioHandlerEvent.onEvent(itemEvent).thenRun(ack::acknowledge);
 		} catch (Exception e) {
 			// log the exception and do *not* acknowledge the event
 			log.warn("Unable to apply event {} to the latest state of aggregate with ID {}.", e);

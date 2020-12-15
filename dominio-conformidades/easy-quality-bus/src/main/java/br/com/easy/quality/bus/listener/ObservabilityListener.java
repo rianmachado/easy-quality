@@ -15,7 +15,7 @@ import br.com.easy.quality.event.ObservabilityEvent;
 import br.com.easy.quality.event.Exception.DomainException;
 
 @Component
-public class LogListener {
+public class ObservabilityListener {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 

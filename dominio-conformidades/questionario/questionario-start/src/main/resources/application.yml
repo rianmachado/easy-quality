@@ -36,11 +36,11 @@ spring:
       
 
 custonKafka:
-  integration:
-     cadastro:
-      inspecao:
-        questionario: topic-integration-cadastro-inspecao-questionario
-        questionario-enriquecido: topic-integration-cadastro-inspecao-questionario-enriquecido
+  solicitacoes:
+     inspecoes: topic-solicitacoes-inspecao
+  entregas:   
+     questionarios: topic-entregas-questionarios
+         
   observability:
     easy-quality-topic: logs-events-easy-quality      
     

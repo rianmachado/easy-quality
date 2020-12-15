@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 
 import br.com.easy.quality.bus.service.ServiceBus;
 import br.com.easy.quality.questionario.adapter.kafka.Mapper.MapperMessage;
-import br.com.easy.quality.questionario.command.CreateQuestionarioPublishCommand;
+import br.com.easy.quality.questionario.command.PublishQuestionarioCommand;
 import br.com.easy.quality.questionario.query.IdQuestionarioQuery;
 
 @Component
-public class CreateInspecaoHandlerEvent {
+public class HandlerEventRecuperarInspecao {
 
 	@Autowired
 	private ServiceBus serviceBus;
@@ -28,7 +28,7 @@ public class CreateInspecaoHandlerEvent {
 			var questionario = mapperMessage.mapToJSON(query.getResult());
 			mapperMessage.updateJSON(body, questionario);
 
-			var publishQuestionario = new CreateQuestionarioPublishCommand(body.asText());
+			var publishQuestionario = new PublishQuestionarioCommand(body.asText());
 			serviceBus.execute(publishQuestionario);
 		});
 	}

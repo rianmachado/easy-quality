@@ -16,17 +16,17 @@ import br.com.easy.quality.event.Event;
 import br.com.easy.quality.event.PublishMessage;
 
 @Component("transactionalEventCreateInspecao")
-public class TransactionalEventCreateInspecao implements PublishMessage {
+public class EventCreateInspecao implements PublishMessage {
 
-	private static final Logger log = LoggerFactory.getLogger(TransactionalEventCreateInspecao.class);
+	private static final Logger log = LoggerFactory.getLogger(EventCreateInspecao.class);
 
 	private final String topicName;
 
 	private final KafkaTemplate<String, String> kafkaTemplate;
 
 	@Autowired
-	public TransactionalEventCreateInspecao(
-			@Value("${custonKafka.integration.cadastro.inspecao.questionario}") final String topicName,
+	public EventCreateInspecao(
+			@Value("${custonKafka.solicitacoes.inspecoes}") final String topicName,
 			final KafkaTemplate<String, String> kafkaTemplate) {
 		this.topicName = topicName;
 		this.kafkaTemplate = kafkaTemplate;

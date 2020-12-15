@@ -12,13 +12,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateQuestionarioPublishCommand extends SelfValidating<CreateQuestionarioPublishCommand>
+public class PublishQuestionarioCommand extends SelfValidating<PublishQuestionarioCommand>
 		implements Command {
 
 	@NotNull
 	private final String body;
 
-	public CreateQuestionarioPublishCommand(String body) {
+	public PublishQuestionarioCommand(String body) {
 		this.body = body;
 		validateSelf();
 	}

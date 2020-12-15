@@ -10,7 +10,7 @@ import br.com.easy.quality.inspecao.adapter.kafka.Mapper.MapperMessage;
 import br.com.easy.quality.inspecao.command.CreateInspecaoCommand;
 
 @Component
-public class ConsummerQuestionarioHandlerEvent {
+public class HandlerEventRecuperaQuestionario {
 
 	@Autowired
 	private ServiceBus serviceBus;
