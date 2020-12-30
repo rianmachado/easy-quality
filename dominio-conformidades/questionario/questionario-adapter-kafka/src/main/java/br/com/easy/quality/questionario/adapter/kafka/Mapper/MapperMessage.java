@@ -27,10 +27,10 @@ public class MapperMessage {
 	}
 
 	// TODO: REVER TRATATIVA NESSE MAP(TRATAMENTO DE ERRO)
-	public JsonNode updateJSON(final JsonNode body, final JsonNode questionario) {
-		((ObjectNode) body).put("questionarioModelo", questionario);
-		return body;
-
+	public String updateQuestionario(final JsonNode body, final JsonNode questionario) {
+		ObjectNode o = (ObjectNode) body;
+		o.put("questionarioModelo", questionario);
+		return o.toString();
 	}
 
 	// TODO: REVER TRATATIVA NESSE MAP(TRATAMENTO DE ERRO)

@@ -14,6 +14,5 @@ public class PerguntaEntity {
 
 	private String descricao;
 
-	private String resposta;
 
 }

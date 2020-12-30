@@ -56,7 +56,8 @@ public class CreateInspecaoPublishCommand extends SelfValidating<CreateInspecaoP
 			questionario.setPerguntas(perguntas);
 		}
 
-		this.questionario = Questionario.builder().guid(inspecaoDTO.getGuid()).perguntas(perguntas).build();
+		this.questionario = Questionario.builder().guid(inspecaoDTO.getQuestionarioModelo().getGuid())
+				.perguntas(perguntas).build();
 
 		validateSelf();
 	}

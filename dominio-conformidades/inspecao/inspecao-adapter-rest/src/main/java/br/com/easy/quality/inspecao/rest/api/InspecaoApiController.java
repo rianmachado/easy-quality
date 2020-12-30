@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.easy.quality.bus.service.ServiceBus;
-import br.com.easy.quality.inspecao.command.CreateInspecaoCommand;
+import br.com.easy.quality.inspecao.command.CreateInspecaoPublishCommand;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
 import br.com.easy.quality.inspecao.query.IdInspecaoQuery;
 import br.com.easy.quality.inspecao.query.ListAllInspecaoQuery;
@@ -36,7 +36,7 @@ public class InspecaoApiController implements InspecaoApi {
 
 	public ResponseEntity<Void> criarInspecao(
 			@ApiParam(value = "Objeto utilizado para adicionar nova inspecao", required = true) @Valid @RequestBody InspecaoDTO body) {
-		var comando = new CreateInspecaoCommand(body);
+		var comando = new CreateInspecaoPublishCommand(body);
 		serviceBus.execute(comando);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}

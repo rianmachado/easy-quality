@@ -5,7 +5,7 @@ package br.com.easy.quality.bus.service;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import br.com.easy.quality.bus.exception.ServiceBusInvalidObjectException;
 import br.com.easy.quality.event.CommandEvent;
@@ -16,7 +16,7 @@ import br.com.easy.quality.event.command.Handler;
 import br.com.easy.quality.event.query.Query;
 import br.com.easy.quality.event.query.Resolver;
 
-@Component
+@Service
 public class ServiceBus {
 
 	private ApplicationContext context;

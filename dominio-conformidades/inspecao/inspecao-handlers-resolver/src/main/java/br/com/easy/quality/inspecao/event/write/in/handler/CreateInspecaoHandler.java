@@ -13,7 +13,7 @@ public class CreateInspecaoHandler implements Handler<CreateInspecaoCommand> {
 
 	@Override
 	public void handle(CreateInspecaoCommand command) {
-
+		
 	}
 
 }
