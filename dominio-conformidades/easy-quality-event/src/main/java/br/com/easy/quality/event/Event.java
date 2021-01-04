@@ -5,6 +5,8 @@ public interface Event {
 	 Object getSource();
 
 	 String toJson();
+	 
+	 String getJson();
 
 	 String gerarGUID();
 	 

@@ -73,7 +73,7 @@ public class Inspecao {
 		Status status = Status.ATIVA_SEM_OCORRENCIA;
 
 		long respostaNao = questionario.getPerguntas().stream()
-				.filter(respostas -> respostas.getOpcaoResposta().equals("NAO")).count();
+				.filter(respostas -> respostas.getResposta().equals("NAO")).count();
 
 		if (dataDeExpiracao.isAfter(LocalDateTime.now())) {
 			if (respostaNao > Constants.PERCENTUAL_INSPECAO) {

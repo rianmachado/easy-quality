@@ -30,7 +30,9 @@ spring:
       valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer
       autoOffsetReset: earliest
       enableAutoCommit: false
-      isolationLevel: read-committed      
+      isolationLevel: read-committed
+    listener:
+      ackMode: MANUAL        
         
 custonKafka:
   solicitacoes:

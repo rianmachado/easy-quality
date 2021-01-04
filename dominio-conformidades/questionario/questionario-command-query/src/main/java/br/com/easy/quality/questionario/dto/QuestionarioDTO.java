@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class QuestionarioDTO {
-	private String id;
+	private String guid;
 	private String titulo;
 	private Boolean status;
 	private List<PerguntaDTO> perguntas;

@@ -12,7 +12,7 @@ public class InspecaoDTO {
 	private Boolean status;
 	private String nomeColaboradorEntrevistador;
 	private String nomeColaboradorEntrevistado;
-	private QuestionarioDTO questionarioModelo;
+	private QuestionarioDTO questionario;
 	private String dataDeExpiracao;
 	private String dataCriacao;
 	private String dataEdicao;

@@ -41,24 +41,32 @@ public class CreateInspecaoCommand extends SelfValidating<CreateInspecaoCommand>
 	private Questionario questionario;
 
 	public CreateInspecaoCommand(InspecaoDTO inspecaoDTO) {
-		this.titulo = inspecaoDTO.getQuestionarioModelo().getTitulo();
+		this.titulo = inspecaoDTO.getQuestionario().getTitulo();
 		this.status = inspecaoDTO.getStatus();
 		this.nomeColaboradorEntrevistador = inspecaoDTO.getNomeColaboradorEntrevistador();
 		this.nomeColaboradorEntrevistado = inspecaoDTO.getNomeColaboradorEntrevistado();
 		this.dataDeExpiracao = inspecaoDTO.getDataDeExpiracao();
 
 		List<Pergunta> perguntas = new ArrayList<Pergunta>();
-		if (CollectionUtils.isEmpty(inspecaoDTO.getQuestionarioModelo().getPerguntas())) {
-			inspecaoDTO.getQuestionarioModelo().getPerguntas().stream().forEach(item -> {
-				perguntas.add(Pergunta.builder().descricao(item.getDescricao()).opcaoResposta(item.getOpcaoResposta())
-						.build());
+		if (!CollectionUtils.isEmpty(inspecaoDTO.getQuestionario().getPerguntas())) {
+			inspecaoDTO.getQuestionario().getPerguntas().stream().forEach(item -> {
+				perguntas.add(Pergunta.builder().descricao(item.getDescricao()).resposta(item.getResposta()).build());
 			});
-			questionario.setPerguntas(perguntas);
 		}
 
-		this.questionario = Questionario.builder().guid(inspecaoDTO.getGuid()).perguntas(perguntas).build();
+		questionario = Questionario.builder().guid(inspecaoDTO.getQuestionario().getGuid()).perguntas(perguntas)
+				.build();
+
+		this.questionario = Questionario.builder().guid(inspecaoDTO.getQuestionario().getGuid())
+				.perguntas(perguntas).build();
 
 		validateSelf();
+	}
+
+	@Override
+	public String getBodyJson() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -66,4 +66,12 @@ public class QueryEvent extends ObservabilityEvent {
 		return null;
 	}
 
+	@Override
+	public String getJson() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
 }

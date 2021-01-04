@@ -40,4 +40,10 @@ public class CreateQuestionarioCommand extends SelfValidating<CreateQuestionario
 		validateSelf();
 	}
 
+	@Override
+	public String getBodyJson() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

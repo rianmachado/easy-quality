@@ -17,16 +17,16 @@ public class Pergunta {
 	private String descricao;
 
 	@NonNull
-	private String opcaoResposta;
+	private String resposta;
 
-	public Pergunta(String descricao, String opcaoResposta) {
+	public Pergunta(String descricao, String resposta) {
 		this.descricao = descricao;
-		this.opcaoResposta = opcaoResposta;
+		this.resposta = resposta;
 	}
 
 	public boolean isRespostaValida() {
 
-		if (!this.opcaoResposta.isEmpty() && (this.opcaoResposta.equals("NAO") || this.opcaoResposta.equals("SIM"))) {
+		if (!this.resposta.isEmpty() && (this.resposta.equals("NAO") || this.resposta.equals("SIM"))) {
 			return true;
 		} else {
 			return true;

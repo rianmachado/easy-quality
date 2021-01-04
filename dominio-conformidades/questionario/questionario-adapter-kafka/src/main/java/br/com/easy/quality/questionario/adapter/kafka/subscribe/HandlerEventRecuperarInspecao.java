@@ -31,8 +31,7 @@ public class HandlerEventRecuperarInspecao {
 			var query = IdQuestionarioQuery.builder().id(guidQuestionario).build();
 			serviceBus.execute(query);
 			var questionario = mapperMessage.mapToJSON(query.getResult());
-			String bodyAtualizado = mapperMessage.updateQuestionario(body, questionario);
-		
+			String bodyAtualizado = mapperMessage.updateQuestionario(body.get("content"), questionario);
 			var command = new PublishQuestionarioCommand(bodyAtualizado);
 			var event = new PublishEvent(command);
 			publisher.publishEvent(event);

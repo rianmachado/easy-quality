@@ -62,4 +62,10 @@ public class CommandEvent extends ObservabilityEvent {
 	public String obterGUID() {
 		return id;
 	}
+
+	@Override
+	public String getJson() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -36,7 +36,7 @@ public class EventPublicaQuestionario implements PublishMessage {
 		log.info("Attempting to log {} to topic {}.", event, topicName);
 		kafkaTemplate.executeInTransaction(operations -> {
 			final String key = event.obterGUID();
-			operations.send(topicName, key, event.toJson()).addCallback(this::onSuccess, this::onFailure);
+			operations.send(topicName, key, event.getJson()).addCallback(this::onSuccess, this::onFailure);
 			return true;
 		});
 	}
