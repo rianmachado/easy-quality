@@ -53,12 +53,10 @@ public class CreateInspecaoCommand extends SelfValidating<CreateInspecaoCommand>
 				perguntas.add(Pergunta.builder().descricao(item.getDescricao()).resposta(item.getResposta()).build());
 			});
 		}
-
 		questionario = Questionario.builder().guid(inspecaoDTO.getQuestionario().getGuid()).perguntas(perguntas)
 				.build();
-
-		this.questionario = Questionario.builder().guid(inspecaoDTO.getQuestionario().getGuid())
-				.perguntas(perguntas).build();
+		this.questionario = Questionario.builder().guid(inspecaoDTO.getQuestionario().getGuid()).perguntas(perguntas)
+				.build();
 
 		validateSelf();
 	}

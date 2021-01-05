@@ -16,11 +16,6 @@ public class CriarInspecaoUseCase {
 	private InspecaoPersistenceWrite inspecaoPesistence;
 
 	public void saveInspecao(Inspecao inspecao) {
-
-		// TODO:
-		// OBTER O QUESTIONARIO TEMPLATE e SETAR DATA/HORA NO
-		// dataDeUsoQuestionarioModelo
-
 		inspecaoPesistence.saveInspecao(inspecao);
 	}
 

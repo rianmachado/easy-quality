@@ -45,8 +45,9 @@ public class Inspecao {
 		if (dataDeExpiracao.isBefore(LocalDateTime.now())) {
 			throw new DomainException(CodeDomainMessage.ERROR_INSPECAO_INVALIDA);
 		}
-		var dataCriacao = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		this.dataCriacao = LocalDateTime.parse(dataCriacao);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		var dataCriacaoString = LocalDateTime.now().format(formatter);
+		this.dataCriacao = LocalDateTime.parse(dataCriacaoString, formatter);
 
 	}
 
@@ -55,8 +56,9 @@ public class Inspecao {
 		if (nomeColaboradorEntrevistado.equalsIgnoreCase(nomeColaboradorEntrevistador)) {
 			throw new DomainException(CodeDomainMessage.ERROR_INSPECAO_INVALIDA);
 		}
-		var dataCriacao = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		this.dataCriacao = LocalDateTime.parse(dataCriacao);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		var dataCriacaoString = LocalDateTime.now().format(formatter);
+		this.dataCriacao = LocalDateTime.parse(dataCriacaoString, formatter);
 
 	}
 
@@ -64,8 +66,9 @@ public class Inspecao {
 		if (!status) {
 			throw new DomainException(CodeDomainMessage.ERROR_INSPECAO_INVALIDA);
 		}
-		var dataCriacao = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		this.dataCriacao = LocalDateTime.parse(dataCriacao);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		var dataCriacaoString = LocalDateTime.now().format(formatter);
+		this.dataCriacao = LocalDateTime.parse(dataCriacaoString, formatter);
 	}
 
 	public Status obterStatusInspecao() throws DomainException {
@@ -104,8 +107,5 @@ public class Inspecao {
 				+ ", dataDeUsoQuestionarioModelo=" + dataDeUsoQuestionarioModelo + ", questionario=" + questionario
 				+ "]";
 	}
-	
-	
-	
 
 }

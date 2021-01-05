@@ -15,23 +15,14 @@ public class CreateInspecaoPublishHandler implements Handler<CreateInspecaoPubli
 
 	private ApplicationEventPublisher publisher;
 
-	public CreateInspecaoPublishHandler( ApplicationEventPublisher publisher) {
+	public CreateInspecaoPublishHandler(ApplicationEventPublisher publisher) {
 		this.publisher = publisher;
 	}
 
-	
 	@Override
 	public void handle(CreateInspecaoPublishCommand createInspecaoPublishCommand) {
 		var event = new PublishEvent(createInspecaoPublishCommand);
 		publisher.publishEvent(event);
-		/*
-		 * var inspecao = Inspecao.builder()
-		 * .dataDeExpiracao(dataConverter.toLocalDateTime("yyyy-MM-dd",
-		 * command.getDataDeExpiracao()))
-		 * .nomeColaboradorEntrevistado(command.getNomeColaboradorEntrevistado())
-		 * .nomeColaboradorEntrevistador(command.getNomeColaboradorEntrevistador()).
-		 * build(); inspecao.criarInspecao(); inspecao.editarInspecao();
-		 */
 
 	}
 

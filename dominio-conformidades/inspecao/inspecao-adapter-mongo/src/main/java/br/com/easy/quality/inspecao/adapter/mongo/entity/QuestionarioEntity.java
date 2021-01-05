@@ -11,5 +11,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class QuestionarioEntity {
+	private String guid;
 	private List<PerguntaEntity> perguntas;
 }

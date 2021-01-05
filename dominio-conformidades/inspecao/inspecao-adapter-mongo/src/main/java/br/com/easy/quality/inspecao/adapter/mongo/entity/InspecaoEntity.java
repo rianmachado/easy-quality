@@ -39,7 +39,6 @@ public class InspecaoEntity {
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime dataDeUsoQuestionarioModelo;
 
-	private QuestionarioEntity questionarioEntity;
-	
+	private QuestionarioEntity questionario;
 
 }

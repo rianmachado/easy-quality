@@ -13,7 +13,7 @@ public class DataConverter {
 	}
 
 	public LocalDateTime toLocalDateTime(String data) {
-		return LocalDateTime.parse(data, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		return LocalDateTime.parse(data, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 	}
 
 }
