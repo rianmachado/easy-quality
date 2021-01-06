@@ -16,4 +16,5 @@ public class PerguntaDTO {
 	
 	private String descricao;
 	private String resposta;
+	
 }

@@ -20,7 +20,7 @@ import lombok.Setter;
 public class QuestionarioEntity {
 
 	@Id
-	private String guid;
+	private String id;
 
 	@Indexed
 	private String titulo;

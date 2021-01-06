@@ -17,6 +17,8 @@ import lombok.Setter;
 @Builder
 public class Inspecao {
 
+	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
 	public enum Status {
 		ATIVA_COM_OCORRENCIA, ATIVA_SEM_OCORRENCIA, INATIVA_COM_OCORRENCIA, INATIVA_SEM_OCORRENCIA,
 		EXPIRADA_SEM_OCORRENCIA, EXPIRADA_COM_OCORRENCIA
@@ -45,9 +47,11 @@ public class Inspecao {
 		if (dataDeExpiracao.isBefore(LocalDateTime.now())) {
 			throw new DomainException(CodeDomainMessage.ERROR_INSPECAO_INVALIDA);
 		}
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		var dataCriacaoString = LocalDateTime.now().format(formatter);
 		this.dataCriacao = LocalDateTime.parse(dataCriacaoString, formatter);
+
+		var dataDeUsoQuestionarioModeloString = LocalDateTime.now().format(formatter);
+		this.dataDeUsoQuestionarioModelo = LocalDateTime.parse(dataDeUsoQuestionarioModeloString, formatter);
 
 	}
 
@@ -56,7 +60,6 @@ public class Inspecao {
 		if (nomeColaboradorEntrevistado.equalsIgnoreCase(nomeColaboradorEntrevistador)) {
 			throw new DomainException(CodeDomainMessage.ERROR_INSPECAO_INVALIDA);
 		}
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		var dataCriacaoString = LocalDateTime.now().format(formatter);
 		this.dataCriacao = LocalDateTime.parse(dataCriacaoString, formatter);
 
@@ -66,7 +69,6 @@ public class Inspecao {
 		if (!status) {
 			throw new DomainException(CodeDomainMessage.ERROR_INSPECAO_INVALIDA);
 		}
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		var dataCriacaoString = LocalDateTime.now().format(formatter);
 		this.dataCriacao = LocalDateTime.parse(dataCriacaoString, formatter);
 	}

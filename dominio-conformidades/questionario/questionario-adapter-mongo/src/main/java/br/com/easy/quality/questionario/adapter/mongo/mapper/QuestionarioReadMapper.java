@@ -14,12 +14,12 @@ import br.com.easy.quality.questionario.dto.QuestionarioDTO;
 
 @Component
 public class QuestionarioReadMapper {
-	
 
 	public List<QuestionarioDTO> mapFromEntityToDto(Iterable<QuestionarioEntity> questionarios) {
 		List<QuestionarioDTO> dto = new ArrayList<QuestionarioDTO>();
 		questionarios.forEach(item -> {
 			QuestionarioDTO questionarioDTO = new QuestionarioDTO();
+			questionarioDTO.setGuid(item.getId());
 			BeanUtils.copyProperties(item, questionarioDTO);
 			dto.add(questionarioDTO);
 		});
@@ -28,6 +28,7 @@ public class QuestionarioReadMapper {
 
 	public QuestionarioDTO mapFromEntityToDto(QuestionarioEntity questionario) {
 		QuestionarioDTO dto = new QuestionarioDTO();
+		dto.setGuid(questionario.getId());
 		BeanUtils.copyProperties(questionario, dto);
 		return dto;
 	}

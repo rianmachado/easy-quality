@@ -41,7 +41,7 @@ public class CreateInspecaoCommand extends SelfValidating<CreateInspecaoCommand>
 	private Questionario questionario;
 
 	public CreateInspecaoCommand(InspecaoDTO inspecaoDTO) {
-		this.titulo = inspecaoDTO.getQuestionario().getTitulo();
+		this.titulo = inspecaoDTO.getTitulo();
 		this.status = inspecaoDTO.getStatus();
 		this.nomeColaboradorEntrevistador = inspecaoDTO.getNomeColaboradorEntrevistador();
 		this.nomeColaboradorEntrevistado = inspecaoDTO.getNomeColaboradorEntrevistado();

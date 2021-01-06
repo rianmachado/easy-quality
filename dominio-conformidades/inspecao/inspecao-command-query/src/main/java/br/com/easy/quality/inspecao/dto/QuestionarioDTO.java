@@ -3,7 +3,7 @@
  */
 package br.com.easy.quality.inspecao.dto;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Getter;
@@ -16,6 +16,14 @@ public class QuestionarioDTO {
 	private String titulo;
 	private Boolean status;
 	private List<PerguntaDTO> perguntas;
-	private LocalDateTime dataCriacao;
-	private LocalDateTime dataEdicao;
+	public void addPerguntas(PerguntaDTO perguntaDTO) {
+		if (perguntas == null) {
+			perguntas = new ArrayList<>();
+			perguntas.add(perguntaDTO);
+		} else {
+			perguntas.add(perguntaDTO);
+		}
+
+	}
+
 }

@@ -16,6 +16,7 @@ public class CriarInspecaoUseCase {
 	private InspecaoPersistenceWrite inspecaoPesistence;
 
 	public void saveInspecao(Inspecao inspecao) {
+		inspecao.criarInspecao();
 		inspecaoPesistence.saveInspecao(inspecao);
 	}
 

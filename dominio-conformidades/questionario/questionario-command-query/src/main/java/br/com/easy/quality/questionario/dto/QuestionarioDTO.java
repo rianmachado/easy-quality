@@ -3,7 +3,6 @@
  */
 package br.com.easy.quality.questionario.dto;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.Getter;
@@ -16,6 +15,4 @@ public class QuestionarioDTO {
 	private String titulo;
 	private Boolean status;
 	private List<PerguntaDTO> perguntas;
-	private LocalDateTime dataCriacao;
-	private LocalDateTime dataEdicao;
 }

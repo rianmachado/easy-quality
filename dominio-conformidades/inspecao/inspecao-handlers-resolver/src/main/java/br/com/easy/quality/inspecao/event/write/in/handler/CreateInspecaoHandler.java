@@ -41,10 +41,14 @@ public class CreateInspecaoHandler implements Handler<CreateInspecaoCommand> {
 				.dataDeExpiracao(dataConverter.toLocalDateTime("yyyy-MM-dd HH:mm:ss", command.getDataDeExpiracao()))
 				.nomeColaboradorEntrevistado(command.getNomeColaboradorEntrevistado())
 				.nomeColaboradorEntrevistador(command.getNomeColaboradorEntrevistador())
+				.status(command.getStatus())
 				.questionario(
-						Questionario.builder().guid(command.getQuestionario().getGuid()).perguntas(perguntas).build())
+						Questionario.builder()
+						.guid(command.getQuestionario().getGuid())
+						.perguntas(perguntas).build())
+				
 				.build();
-		inspecao.criarInspecao();
+		
 		criarInspecaoUseCase.saveInspecao(inspecao);
 	}
 
