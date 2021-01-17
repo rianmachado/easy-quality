@@ -14,17 +14,17 @@ spring:
   data:
     mongodb:
       database: db_easyquality_form
-      host: localhost
+      host: ec2-18-188-40-33.us-east-2.compute.amazonaws.com
       port: 27017
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: ec2-18-188-40-33.us-east-2.compute.amazonaws.com:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       retries: 5
       transaction-id-prefix: logs-events-formulario-done
     consumer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: ec2-18-188-40-33.us-east-2.compute.amazonaws.com:9092
       groupId: group-integration-cadastro-inspecao-questionario
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
       valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -34,6 +34,17 @@ spring:
     listener:
       ackMode: MANUAL  
       
+  
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+
+#  health:
+#    probes:
+#      enabled: true 
+      
 
 custonKafka:
   solicitacoes:
@@ -42,7 +53,7 @@ custonKafka:
      questionarios: topic-entregas-questionarios
          
   observability:
-    easy-quality-topic: logs-events-easy-quality      
+    easy-quality-topic: logs-events-easy-quality
     
 springfox:
   documentation:

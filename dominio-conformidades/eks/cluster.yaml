@@ -1,0 +1,22 @@
+###eksctl create cluster -f cluster.yaml
+###eksctl delete cluster -f cluster.yaml
+
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: basic-cluster
+  region: us-east-2
+
+nodeGroups:
+  - name: ng-1
+    instanceType: t3.medium
+    desiredCapacity: 2
+    volumeSize: 80
+  
+  - name: ng-2
+    instanceType: t3.medium
+    desiredCapacity: 2
+    volumeSize: 80
+    #ssh:
+      #publicKeyPath: /Users/rian/.aws/my-ssh-public-key-Ohio.pem

@@ -78,6 +78,30 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<jvmArguments>
+						--enable-preview
+					</jvmArguments>
+					<executable>true</executable>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>1.8.0</version>
+				<configuration>
+					<from>
+						<image>
+							adoptopenjdk/openjdk14:alpine
+						</image>
+					</from>
+					<to>
+						<image>
+							585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-questionario:v1
+						</image>
+					</to>
+					<allowInsecureRegistries>true</allowInsecureRegistries>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -1,0 +1,4 @@
+
+docker build -f Dockerfile  -t 585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-questionario:v1 .
+docker run -p 8082:8082 <image>
+docker push 585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-questionario:v1

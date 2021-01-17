@@ -1,0 +1,8 @@
+
+kubectl apply -f <FILE>
+kubectl delete -f <FILE>
+kubectl get all -n conformidade
+kubectl logs deployment.apps/questionario -n conformidade
+kubectl describe pod/questionario-9c779cb8f-sn4jw -n conformidade
+kubectl port-forward <<svc/movie-quote-service>> 8080:8080
+kubectl logs  pod/questionario-699db5ffc6-fb5vt -n conformidade
