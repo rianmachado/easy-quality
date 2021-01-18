@@ -14,17 +14,17 @@ spring:
   data:
     mongodb:
       database: db_easyquality_inspecao
-      host: localhost
+      host: ec2-18-188-40-33.us-east-2.compute.amazonaws.com
       port: 27017
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: ec2-18-188-40-33.us-east-2.compute.amazonaws.com:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       retries: 5
       transaction-id-prefix: logs-events-inspecao-done
     consumer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: ec2-18-188-40-33.us-east-2.compute.amazonaws.com:9092
       groupId: group-integration-cadastro-inspecao-questionario-finalizacao
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
       valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer

@@ -70,8 +70,6 @@
 			<artifactId>easy-quality-bus</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
@@ -79,6 +77,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<jvmArguments>
+						--enable-preview
+					</jvmArguments>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
