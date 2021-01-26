@@ -41,3 +41,6 @@ Localize o arquivo Dockerfile localizado na raiz de cada micro serviço.
 # Infraestrutura
 Acesse o diretório "eks" localizado na raiz dessa POC. La encontra-se os comandos utilizados para rodar a aplicação sobre o gestor de container(Kuberntes) utilizando o EKS da Amazon.
 
+# Melhorias
+Ainda não foi abordado neste trabalho assuntos de extrema importância. Padronização e melhor prática a ser aplicada na transformação dos dados capturados pelos adaptadores Kafka(assinantes de tópicos) e a implementação de Dead Letter Queues(DLQ) para tratamento de erros.
+
