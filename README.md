@@ -16,14 +16,14 @@ O Produto atualmente é comtemplado com o módulo(domínio) de conformidades mas
 # Arquitetura 
 EVENT DRIVEN E MICROSERVICE USANDO COMMAND QUERY RESPONSABILITY SEGREGATION 
 
-## Ilustrações?
+## Ilustrações
 
-[Figura01](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture1.png)
-[Figura02](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture2.png)
-[Figura03](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture3.png)
-[Figura04](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture4.png)
-[Figura05](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture5.png)
-[Figura06](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture6.png)
+- [Figura01](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture1.png)
+- [Figura02](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture2.png)
+- [Figura03](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture3.png)
+- [Figura04](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture4.png)
+- [Figura05](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture5.png)
+- [Figura06](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture6.png)
 
 ## Pré requisitos
 * Java 14
