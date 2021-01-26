@@ -18,12 +18,12 @@ EVENT DRIVEN E MICROSERVICE USANDO COMMAND QUERY RESPONSABILITY SEGREGATION
 
 ## Ilustrações
 
-- [Figura01](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture1.png)
-- [Figura02](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture2.png)
-- [Figura03](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture3.png)
-- [Figura04](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture4.png)
-- [Figura05](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture5.png)
-- [Figura06](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture6.png)
+- [Componentes](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture1.png)
+- [Interação de componentes com o barramento de eventos](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture2.png)
+- [Protótipo Arquitetural](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture3.png)
+- [CQRS](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture4.png)
+- [Implantação](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture5.png)
+- [Componentes K8s](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture6.png)
 
 ## Pré requisitos
 * Java 14
