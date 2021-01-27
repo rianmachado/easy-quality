@@ -2,8 +2,8 @@ ATENCAO: TEXTO EM CONSTRUÇÃO/REVISÃO.
 
 # POC Apresentação
 Projeto academico(Especialização em Arquitetura de Sistemas Distribuídos PUC).
-Essa POC tem como pricipal objetivo demonstrar a integração entre dois microserviços a partir de um produdo fictício chamado Easy Quality. 
-O Easy Quality é composto por uma suíte de ferramentas e dados integrados quem permitem às empresas fazerem gestão da qualidade de acordo com o momento e estratégia de negócio que vivem. Com módulos desenhados no formato escada de produtos, conseguimos incrementar ou remover  módulos de software levando assim aos clientes ótima experiência na sua jornada, pois a transformação digital impões time to market agressivo para empresas pequenas, médias ou grandes. Foi pensando assim que desenhamos uma arquitetura de software que possibilite: escalabilidade, extensibilidade, disponibilidade, performance, tolerância a falha e resiliência tudo isso iplementado em nuven sobre tecnologias de orquestração de containers.
+Essa POC tem como principal objetivo demonstrar a integração entre dois microserviços a partir de um produto fictício chamado Easy Quality. 
+O Easy Quality é composto por uma suíte de ferramentas e dados integrados que permitem às empresas fazerem gestão da qualidade de acordo com o momento e estratégia de negócio que vivem. Com módulos desenhados no formato escada de produtos, conseguimos incrementar ou remover  módulos de software levando assim aos clientes ótima experiência na sua jornada, pois a transformação digital impões time to market agressivo para empresas pequenas, médias ou grandes. Foi pensando assim que desenhamos uma arquitetura de software que possibilite: escalabilidade, extensibilidade, disponibilidade, performance, tolerância a falha e resiliência tudo isso iplementado em nuven utilizando k8s.
 
 # Documentos completos(EM BREVE)
 - TCC em PDF 
