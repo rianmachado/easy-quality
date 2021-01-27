@@ -6,8 +6,8 @@ Essa POC tem como pricipal objetivo demonstrar a integração entre dois microse
 O Easy Quality é composto por uma suíte de ferramentas e dados integrados quem permitem às empresas fazerem gestão da qualidade de acordo com o momento e estratégia de negócio que vivem. Com módulos desenhados no formato escada de produtos, conseguimos incrementar ou remover  módulos de software levando assim aos clientes ótima experiência na sua jornada, pois a transformação digital impões time to market agressivo para empresas pequenas, médias ou grandes. Foi pensando assim que desenhamos uma arquitetura de software que possibilite: escalabilidade, extensibilidade, disponibilidade, performance, tolerância a falha e resiliência tudo isso iplementado em nuven sobre tecnologias de orquestração de containers.
 
 # Documentos completos(EM BREVE)
-TCC em PDF 
-TCC Apresentação
+- TCC em PDF 
+- TCC Apresentação
 
 # Domínios
 O Produto atualmente é comtemplado com o módulo(domínio) de conformidades mas que terá a proposta de lancar features em diversos módulos novos como por exemplo gestão de riscos, indicadores e outros. Sendo assim é de extrema importancia o entendimento e coerencia de cada domínio de negócio para que esse produto fictício seja evoluído sem invasão de contexto, tornando cada vez mais assertiva a proposta arquitetural escolhida. 
