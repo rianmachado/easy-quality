@@ -5,6 +5,12 @@ Projeto academico(Especialização em Arquitetura de Sistemas Distribuídos PUC)
 Essa POC tem como principal objetivo demonstrar a integração entre dois microserviços a partir de um produto fictício chamado Easy Quality. 
 O Easy Quality é composto por uma suíte de ferramentas e dados integrados que permitem às empresas fazerem gestão da qualidade de acordo com o momento e estratégia de negócio que vivem. Com módulos desenhados no formato escada de produtos, conseguimos incrementar ou remover  módulos de software levando assim aos clientes ótima experiência na sua jornada, pois a transformação digital impões time to market agressivo para empresas pequenas, médias ou grandes. Foi pensando assim que desenhamos uma arquitetura de software que possibilite: escalabilidade, extensibilidade, disponibilidade, performance, tolerância a falha e resiliência tudo isso iplementado em nuven utilizando k8s.
 
+# Meu objetivo
+Esse material tem a proposta de apesentar o que implementei envolvendo: Eventos, Micro Serviços, CQRS e algumas características da arquitetura Hexagonal. 
+Não é o lançamento do produto EasyQuality. BUGs existem e melhorias de negócio certamente será necesário principalmente quando falamos em domínios negociais.
+
+Ficaria muito feliz se a partir desse ponta pé inicial surgissem opniões que nos levassem ao aprendizado contínio pricipalmente nos aspéctos arquiteturais propostos.
+
 # Documentos completos(EM BREVE)
 - TCC em PDF 
 - TCC Apresentação
