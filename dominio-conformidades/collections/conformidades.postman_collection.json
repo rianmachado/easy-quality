@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "f1bdd697-e0cc-4f20-b9ef-a0d17d70c61b",
+		"name": "TCC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obter todos os questionarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/conformidade/v1/questionarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"conformidade",
+						"v1",
+						"questionarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Questionario por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/conformidade/v1/questionarios/5ff5110120069a789688f7cb",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"conformidade",
+						"v1",
+						"questionarios",
+						"5ff5110120069a789688f7cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar Questionario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"status\":true,\n\t\"titulo\" : \"Sala de aula\",\n        \"perguntas\" : [\n            {\n            \"descricao\" : \"Todas as mesas possuem cadeiras?\"\n            },\n            {\n            \"descricao\" : \"A bancada do professor possui cadeira?\"\n            },\n            {\n            \"descricao\" : \"O quadro branco, possui caneta adequanda?\"\n            },\n            {\n            \"descricao\" : \"A sala de aula possui arcodicionado?\"\n            }\n        ]\n\t\n\t\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/conformidade/v1/questionarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"conformidade",
+						"v1",
+						"questionarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar inspecao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t \n    \"titulo\" : \"Inspeção de rotina ambiente de Sala de aula\",\n\t\"status\":true,\n\t\"nomeColaboradorEntrevistador\" : \"Rian Vasconcelos\",\n    \"nomeColaboradorEntrevistado\" : \"Ana Maria\",\n    \"dataDeExpiracao\" : \"2021-12-25 18:25:43\",\n    \"questionario\":{\n        \"guid\" : \"5ff5110120069a789688f7cb\",\n        \"perguntas\" : [\n            {\n            \"descricao\" : \"Todas as mesas possuem cadeiras?\",\n            \"resposta\" : \"SIM\"\n            },\n            {\n            \"descricao\" : \"A bancada do professor possui cadeira?\",\n            \"resposta\" : \"SIM\"\n            },\n            {\n            \"descricao\" : \"O quadro branco, possui caneta adequanda?\",\n            \"resposta\" : \"SIM\"\n            },\n            {\n            \"descricao\" : \"A sala de aula possui arcodicionado?\",\n            \"resposta\" : \"SIM\"\n            }\n        ]\n    }\n\t\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/conformidade/v1/inspecoes",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"conformidade",
+						"v1",
+						"inspecoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Inspecoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/conformidade/v1/inspecoes",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"conformidade",
+						"v1",
+						"inspecoes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
