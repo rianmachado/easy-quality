@@ -34,7 +34,10 @@ EVENT DRIVEN E MICROSERVICE USANDO COMMAND QUERY RESPONSABILITY SEGREGATION
 # Spring Boot 
  - Micro serciço Questionario
  - Micro serciço Inspeçao
- 
+
+# Postman Collection 
+* [Domínio conformidades] (https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/collections/conformidades.postman_collection.json) 
+  
 # Dokerizando
 Localize o arquivo Dockerfile localizado na raiz de cada micro serviço.
 
