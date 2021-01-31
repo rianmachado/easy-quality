@@ -40,7 +40,16 @@ public class InspecaoApiController implements InspecaoApi {
 		serviceBus.execute(comando);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
+	
+	@Override
+	public ResponseEntity<List<InspecaoDTO>> getInspecoes() {
+		var query = ListAllInspecaoQuery.builder().build();
+		serviceBus.execute(query);
+		return ResponseEntity.ok(query.getResult());
+	}
 
+
+	/*
 	public ResponseEntity<Void> atualizarInspecao(
 			@ApiParam(value = "Object inspecao com seus atributos que serão armazenados", required = true) @Valid @RequestBody InspecaoDTO body) {
 		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
@@ -57,12 +66,7 @@ public class InspecaoApiController implements InspecaoApi {
 		serviceBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
 	}
+	*/
 
-	@Override
-	public ResponseEntity<List<InspecaoDTO>> getInspecoes() {
-		var query = ListAllInspecaoQuery.builder().build();
-		serviceBus.execute(query);
-		return ResponseEntity.ok(query.getResult());
-	}
 
 }

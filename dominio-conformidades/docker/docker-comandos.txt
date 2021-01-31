@@ -3,5 +3,10 @@ docker build -f Dockerfile  -t 585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-q
 docker build -f Dockerfile  -t 585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-inspecao:v1 .
 
 docker run -p 8082:8082 <image>
+docker run -d --rm -p 8082:8082 <image>
+
 docker push 585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-questionario:v1
 docker push 585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-inspecao:v1
+
+
+docker logs <container_id>

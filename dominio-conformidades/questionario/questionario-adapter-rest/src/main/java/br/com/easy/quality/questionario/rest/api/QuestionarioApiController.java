@@ -34,8 +34,6 @@ public class QuestionarioApiController implements QuestionarioApi {
 	@Autowired
 	private ServiceBus serviceBus;
 
-//	@Autowired
-//	private QuestionarioRepositoryCustom repo;
 
 	public ResponseEntity<Void> criarQuestionario(
 			@ApiParam(value = "Objeto utilizado para adicionar novo questionario", required = true) @Valid @RequestBody QuestionarioDTO body) {
@@ -43,16 +41,7 @@ public class QuestionarioApiController implements QuestionarioApi {
 		serviceBus.execute(comando);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
-
-	public ResponseEntity<Void> atualizarQuestionario(
-			@ApiParam(value = "Object questionario com seus atributos que serão armazenados", required = true) @Valid @RequestBody QuestionarioDTO body) {
-		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
-	}
-
-	public ResponseEntity<Void> deleteQuestionario(
-			@ApiParam(value = "Questionario id para ser deletado", required = true) @PathVariable("questionarioId") Long questionarioId) {
-		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
-	}
+	
 
 	public ResponseEntity<QuestionarioDTO> getQuestionarioPorId(
 			@ApiParam(value = "ID da questionario para retorno", required = true) @PathVariable("questionarioId") String questionarioId) {
@@ -67,5 +56,18 @@ public class QuestionarioApiController implements QuestionarioApi {
 		serviceBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
 	}
+
+
+	/*
+	public ResponseEntity<Void> atualizarQuestionario(
+			@ApiParam(value = "Object questionario com seus atributos que serão armazenados", required = true) @Valid @RequestBody QuestionarioDTO body) {
+		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+	}
+
+	public ResponseEntity<Void> deleteQuestionario(
+			@ApiParam(value = "Questionario id para ser deletado", required = true) @PathVariable("questionarioId") Long questionarioId) {
+		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+	}
+	*/
 
 }

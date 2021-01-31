@@ -9,6 +9,7 @@ kubectl logs deployment.apps/questionario -n conformidade
 kubectl logs deployment.apps/inspecao -n conformidade
 
 kubectl port-forward <<svc/movie-quote-service>> 8080:8080
+ ps -ef|grep port-forward
 
 kubectl describe pod/questionario-9c779cb8f-sn4jw -n conformidade
 kubectl logs  pod/questionario-699db5ffc6-fb5vt -n conformidade

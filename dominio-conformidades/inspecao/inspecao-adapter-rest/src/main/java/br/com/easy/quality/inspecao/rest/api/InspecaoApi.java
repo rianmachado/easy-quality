@@ -30,6 +30,16 @@ public interface InspecaoApi {
 	ResponseEntity<Void> criarInspecao(
 			@ApiParam(value = "Objeto utilizado para adicionar inspecoes(s)", required = true) @Valid @RequestBody InspecaoDTO body);
 
+
+	@ApiOperation(value = "Obter todos as inspecoes cadastrados", nickname = "getInspecaos", notes = "Retorna uma inspecao simples", response = InspecaoDTO.class, tags = {
+			"inspecao", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "successful operation", response = InspecaoDTO.class),
+			@ApiResponse(code = 400, message = "Invalid ID supplied"),
+			@ApiResponse(code = 404, message = "inspecao not found") })
+	@RequestMapping(value = "/inspecoes", produces = { "application/json" }, method = RequestMethod.GET)
+	public ResponseEntity<List<InspecaoDTO>> getInspecoes();
+	
+	/*
 	@ApiOperation(value = "Atualiza uma Inspecao existente", nickname = "atualizarInspecao", notes = "", tags = {
 			"inspecao", })
 	@ApiResponses(value = { @ApiResponse(code = 404, message = "inspecao not found"),
@@ -55,13 +65,7 @@ public interface InspecaoApi {
 	@RequestMapping(value = "/inspecoes/{inspecaoId}", produces = { "application/json" }, method = RequestMethod.GET)
 	ResponseEntity<InspecaoDTO> getInspecaoPorId(
 			@ApiParam(value = "ID da inspecao para retorno", required = true) @PathVariable("inspecaoId") String inspecaoId);
-
-	@ApiOperation(value = "Obter todos as inspecoes cadastrados", nickname = "getInspecaos", notes = "Retorna uma inspecao simples", response = InspecaoDTO.class, tags = {
-			"inspecao", })
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "successful operation", response = InspecaoDTO.class),
-			@ApiResponse(code = 400, message = "Invalid ID supplied"),
-			@ApiResponse(code = 404, message = "inspecao not found") })
-	@RequestMapping(value = "/inspecoes", produces = { "application/json" }, method = RequestMethod.GET)
-	public ResponseEntity<List<InspecaoDTO>> getInspecoes();
+ 
+    */
 
 }

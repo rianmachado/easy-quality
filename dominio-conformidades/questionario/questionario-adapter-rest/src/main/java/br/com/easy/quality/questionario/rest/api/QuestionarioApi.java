@@ -31,24 +31,6 @@ public interface QuestionarioApi {
 	ResponseEntity<Void> criarQuestionario(
 			@ApiParam(value = "Objeto utilizado para adicionar questionario(s)", required = true) @Valid @RequestBody QuestionarioDTO body);
 
-	@ApiOperation(value = "Atualiza uma questionario existente", nickname = "atualizarQuestionario", notes = "", tags = {
-			"questionario", })
-	@ApiResponses(value = { @ApiResponse(code = 404, message = "Questionario not found"),
-			@ApiResponse(code = 405, message = "Validation exception") })
-	@RequestMapping(value = "/questionarios", produces = { "application/json" }, consumes = {
-			"application/json" }, method = RequestMethod.PUT)
-	ResponseEntity<Void> atualizarQuestionario(
-			@ApiParam(value = "Object questionario com seus atributos que serão armazenados", required = true) @Valid @RequestBody QuestionarioDTO body);
-
-	@ApiOperation(value = "Deleta uma questionario existente", nickname = "deleteQuestionario", notes = "", tags = {
-			"questionario", })
-	@ApiResponses(value = { @ApiResponse(code = 400, message = "Invalid ID supplied"),
-			@ApiResponse(code = 404, message = "Questionario not found") })
-	@RequestMapping(value = "/questionarios/{questionarioId}", produces = {
-			"application/json" }, method = RequestMethod.DELETE)
-	ResponseEntity<Void> deleteQuestionario(
-			@ApiParam(value = "Questionario id para ser deletado", required = true) @PathVariable("questionarioId") Long questionarioId);
-
 	@ApiOperation(value = "Obter questionario por ID", nickname = "getQuestionarioPorId", notes = "Retorna uma questionario simples", response = QuestionarioDTO.class, tags = {
 			"questionario", })
 	@ApiResponses(value = {
@@ -68,5 +50,27 @@ public interface QuestionarioApi {
 			@ApiResponse(code = 404, message = "Questionario not found") })
 	@RequestMapping(value = "/questionarios", produces = { "application/json" }, method = RequestMethod.GET)
 	public ResponseEntity<List<QuestionarioDTO>> getQuestionarios();
+	
+	
+	/*
+	@ApiOperation(value = "Atualiza uma questionario existente", nickname = "atualizarQuestionario", notes = "", tags = {
+			"questionario", })
+	@ApiResponses(value = { @ApiResponse(code = 404, message = "Questionario not found"),
+			@ApiResponse(code = 405, message = "Validation exception") })
+	@RequestMapping(value = "/questionarios", produces = { "application/json" }, consumes = {
+			"application/json" }, method = RequestMethod.PUT)
+	ResponseEntity<Void> atualizarQuestionario(
+			@ApiParam(value = "Object questionario com seus atributos que serão armazenados", required = true) @Valid @RequestBody QuestionarioDTO body);
+
+	@ApiOperation(value = "Deleta uma questionario existente", nickname = "deleteQuestionario", notes = "", tags = {
+			"questionario", })
+	@ApiResponses(value = { @ApiResponse(code = 400, message = "Invalid ID supplied"),
+			@ApiResponse(code = 404, message = "Questionario not found") })
+	@RequestMapping(value = "/questionarios/{questionarioId}", produces = {
+			"application/json" }, method = RequestMethod.DELETE)
+	ResponseEntity<Void> deleteQuestionario(
+			@ApiParam(value = "Questionario id para ser deletado", required = true) @PathVariable("questionarioId") Long questionarioId);
+
+	*/
 
 }
