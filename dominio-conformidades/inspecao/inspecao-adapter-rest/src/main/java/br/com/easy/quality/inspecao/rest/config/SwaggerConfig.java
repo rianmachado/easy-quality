@@ -25,7 +25,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket customImplementation() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("br.com.easy.quality.form.rest.api")).build()
+				.apis(RequestHandlerSelectors.basePackage("br.com.easy.quality.inspecao.rest.api")).build()
 				.directModelSubstitute(org.threeten.bp.LocalDate.class, java.sql.Date.class)
 				.directModelSubstitute(org.threeten.bp.OffsetDateTime.class, java.util.Date.class).apiInfo(apiInfo());
 	}
