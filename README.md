@@ -45,7 +45,7 @@ EVENT DRIVEN E MICROSERVICE USANDO COMMAND QUERY RESPONSABILITY SEGREGATION
 * [Domínio conformidades](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/collections/conformidades.postman_collection.json) 
   
 # Dokerizando
-Localize o arquivo Dockerfile localizado na raiz de cada micro serviço.
+Localize o arquivo Dockerfile que encontra-se no módulo de start de cada micro serviço.
 
 # Infraestrutura
 Acesse o diretório "eks" localizado na raiz dessa POC. La encontra-se os comandos utilizados para rodar a aplicação sobre o gestor de container(Kuberntes) utilizando o EKS da Amazon.
