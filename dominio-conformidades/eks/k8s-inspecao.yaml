@@ -46,7 +46,7 @@ spec:
             memory: "300Mi"
             cpu: "200m"
         image: 585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-inspecao:v1
-        imagePullPolicy: Never
+        #imagePullPolicy: Never
         ports:
         - containerPort: 8081
           name: web
