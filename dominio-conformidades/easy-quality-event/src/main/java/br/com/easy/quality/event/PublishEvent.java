@@ -20,6 +20,7 @@ public class PublishEvent implements Event {
 	private Exception exception;
 	private final Command command;
 	private String id;
+	private long stopTime;
 
 	public PublishEvent(Command command) {
 		this.command = command;
@@ -107,4 +108,7 @@ public class PublishEvent implements Event {
 		return exception == null;
 	}
 
+	public void stopTimer() {
+		stopTime = System.nanoTime();
+	}
 }

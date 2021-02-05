@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import br.com.easy.quality.bus.exception.ServiceBusInvalidObjectException;
 import br.com.easy.quality.event.CommandEvent;
 import br.com.easy.quality.event.ObservabilityEvent;
+import br.com.easy.quality.event.PublishEvent;
 import br.com.easy.quality.event.QueryEvent;
 import br.com.easy.quality.event.command.Command;
 import br.com.easy.quality.event.command.Handler;
@@ -21,8 +22,6 @@ public class ServiceBus {
 
 	private ApplicationContext context;
 	private ApplicationEventPublisher publisher;
-
-	// private TransactionalEventPublisher transactionalEventPublisher;
 
 	public ServiceBus(ApplicationContext context, ApplicationEventPublisher publisher) {
 		this.context = context;
@@ -51,6 +50,19 @@ public class ServiceBus {
 			publisher.publishEvent(event);
 		}
 	}
+	
+	public void execute(PublishEvent event) {
+		try {
+			publisher.publishEvent(event);
+		} catch (Exception exception) {
+			event.setException(exception);
+			throw exception;
+		} finally {
+			event.stopTimer();
+		}
+	}
+	
+	
 
 	private void run(ObservabilityEvent event) {
 

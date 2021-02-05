@@ -21,9 +21,6 @@ public class HandlerEventRecuperarInspecao {
 	@Autowired
 	private MapperMessage mapperMessage;
 
-	@Autowired
-	private ApplicationEventPublisher publisher;
-
 	public CompletableFuture<Void> onEvent(final String message) {
 		return CompletableFuture.runAsync(() -> {
 			var body = mapperMessage.mapToJson(message);
@@ -34,7 +31,7 @@ public class HandlerEventRecuperarInspecao {
 			String bodyAtualizado = mapperMessage.updateQuestionario(body.get("content"), questionario);
 			var command = new PublishQuestionarioCommand(bodyAtualizado);
 			var event = new PublishEvent(command);
-			publisher.publishEvent(event);
+			serviceBus.execute(event);
 		});
 	}
 

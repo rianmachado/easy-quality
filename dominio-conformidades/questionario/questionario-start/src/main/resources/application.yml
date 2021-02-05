@@ -14,17 +14,17 @@ spring:
   data:
     mongodb:
       database: db_easyquality_form
-      host: ec2-3-138-188-246.us-east-2.compute.amazonaws.com
+      host: 3.137.98.24
       port: 27017
   kafka:
     producer:
-      bootstrap-servers: ec2-3-138-188-246.us-east-2.compute.amazonaws.com:9092
+      bootstrap-servers: 3.137.98.24:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       retries: 5
       transaction-id-prefix: logs-events-formulario-done
     consumer:
-      bootstrap-servers: ec2-3-138-188-246.us-east-2.compute.amazonaws.com:9092
+      bootstrap-servers: 3.137.98.24:9092
       groupId: group-integration-cadastro-inspecao-questionario
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
       valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer

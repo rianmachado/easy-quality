@@ -27,6 +27,7 @@ public class InspecaoMapper {
 		QuestionarioEntity questionarioEntity = new QuestionarioEntity();
 		questionarioEntity.setGuid(inspecao.getQuestionario().getGuid());
 		InspecaoEntity inspecaoEntity = InspecaoEntity.builder().questionario(questionarioEntity).build();
+		inspecaoEntity.setTitulo(inspecao.getTitulo());
 		BeanUtils.copyProperties(inspecao, inspecaoEntity);
 		inspecao.getQuestionario().getPerguntas().stream().forEach(item -> {
 			PerguntaEntity perguntaEntity = PerguntaEntity.builder().descricao(item.getDescricao())
@@ -45,9 +46,12 @@ public class InspecaoMapper {
 		List<InspecaoDTO> dto = new ArrayList<InspecaoDTO>();
 		inspecaos.forEach(item -> {
 			InspecaoDTO inspecaoDTO = new InspecaoDTO();
+			inspecaoDTO.setTitulo(item.getTitulo());
+			inspecaoDTO.setGuid(item.getId());
+			inspecaoDTO.setStatus(item.getStatus());
 			QuestionarioDTO questionarioDTO = new QuestionarioDTO();
+			questionarioDTO.setGuid(item.getQuestionario().getGuid());
 			inspecaoDTO.setQuestionario(questionarioDTO);
-
 			BeanUtils.copyProperties(item, inspecaoDTO);
 
 			item.getQuestionario().getPerguntas().stream().forEach(pergunta -> {
@@ -55,6 +59,7 @@ public class InspecaoMapper {
 				perguntaDto.setDescricao(pergunta.getDescricao());
 				perguntaDto.setResposta(pergunta.getResposta());
 				inspecaoDTO.getQuestionario().addPerguntas(perguntaDto);
+				
 			});
 
 			dto.add(inspecaoDTO);

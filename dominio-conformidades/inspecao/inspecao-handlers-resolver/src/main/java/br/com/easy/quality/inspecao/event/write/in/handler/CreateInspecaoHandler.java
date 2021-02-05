@@ -42,6 +42,7 @@ public class CreateInspecaoHandler implements Handler<CreateInspecaoCommand> {
 				.nomeColaboradorEntrevistado(command.getNomeColaboradorEntrevistado())
 				.nomeColaboradorEntrevistador(command.getNomeColaboradorEntrevistador())
 				.status(command.getStatus())
+				.titulo(command.getTitulo())
 				.questionario(
 						Questionario.builder()
 						.guid(command.getQuestionario().getGuid())
