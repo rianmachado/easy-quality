@@ -11,9 +11,8 @@ Não é o lançamento do produto EasyQuality. BUGs existem e melhorias de negóc
 
 Ficaria muito feliz se a partir desse ponta pé inicial surgissem opniões que nos levassem ao aprendizado contínio pricipalmente nos aspéctos arquiteturais propostos.
 
-# Documentos completos(EM BREVE)
-- TCC em PDF 
-- TCC Apresentação
+# Documentos
+- [TCC em PDF](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/TCC-Rian-Vasconcelos.pdf)
 
 # Domínios
 O Produto atualmente é comtemplado com o módulo(domínio) de conformidades mas que terá a proposta de lancar features em diversos módulos novos como por exemplo gestão de riscos, indicadores e outros. Sendo assim é de extrema importancia o entendimento e coerencia de cada domínio de negócio para que esse produto fictício seja evoluído sem invasão de contexto, tornando cada vez mais assertiva a proposta arquitetural escolhida. 
