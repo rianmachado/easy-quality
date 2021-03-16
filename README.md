@@ -6,17 +6,16 @@ Essa POC tem como principal objetivo demonstrar a integração entre dois micros
 O Easy Quality é composto por uma suíte de ferramentas e dados integrados que permitem às empresas fazerem gestão da qualidade de acordo com o momento e estratégia de negócio que vivem. Com módulos desenhados no formato escada de produtos, conseguimos incrementar ou remover  módulos de software levando assim aos clientes ótima experiência na sua jornada, pois a transformação digital impões time to market agressivo para empresas pequenas, médias ou grandes. Foi pensando assim que desenhamos uma arquitetura de software que possibilite: escalabilidade, extensibilidade, disponibilidade, performance, tolerância a falha e resiliência tudo isso iplementado em nuven utilizando k8s.
 
 # Meu objetivo
-Esse material tem a proposta de apesentar o que implementei envolvendo: Eventos, Micro Serviços, CQRS e algumas características da arquitetura Hexagonal. 
+Esse material tem o objetivo de apesentar o que implementei envolvendo: Eventos, Micro Serviços, CQRS e algumas características da arquitetura Hexagonal. 
 Não é o lançamento do produto EasyQuality. BUGs existem e melhorias de negócio certamente será necesário principalmente quando falamos em domínios negociais.
 
 Ficaria muito feliz se a partir desse ponta pé inicial surgissem opniões que nos levassem ao aprendizado contínio pricipalmente nos aspéctos arquiteturais propostos.
 
-# Documentos completos(EM BREVE)
-- TCC em PDF 
-- TCC Apresentação
+# Documentos
+- [TCC em PDF](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/TCC-Rian-Vasconcelos.pdf)
 
 # Domínios
-O Produto atualmente é comtemplado com o módulo(domínio) de conformidades mas que terá a proposta de lancar features em diversos módulos novos como por exemplo gestão de riscos, indicadores e outros. Sendo assim é de extrema importancia o entendimento e coerencia de cada domínio de negócio para que esse produto fictício seja evoluído sem invasão de contexto, tornando cada vez mais assertiva a proposta arquitetural escolhida. 
+O Produto atualmente é comtemplado com o domínio de conformidades mas que terá a proposta de lancar features como gestão de riscos, indicadores e outros dessa forma trazendo a necessidade de novos domínios de negócio. É de extrema importancia o entendimento e coerencia de cada domínio de para que esse produto fictício seja evoluído sem invasão de contexto, tornando cada vez mais assertiva a proposta arquitetural escolhida. 
 
 
 # Arquitetura 
@@ -25,7 +24,7 @@ EVENT DRIVEN E MICROSERVICE USANDO COMMAND QUERY RESPONSABILITY SEGREGATION
 ## Ilustrações
 
 - [Componentes](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture1.png)
-- [Interação de componentes com o barramento de eventos](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture2.png)
+- [projeto arquitetural](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture2.png)
 - [Protótipo Arquitetural](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture3.png)
 - [CQRS](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture4.png)
 - [Implantação](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture5.png)
