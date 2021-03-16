@@ -16,7 +16,6 @@ services:
     restart: "no"
     ports:
       - '9092:9092'
-
     volumes:
       - 'kafka_data:/bitnami'
     environment:
@@ -28,7 +27,6 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
       KAFKA_CREATE_TOPICS: 'Sometopic:1:1'
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
- 
     depends_on:
       - zookeeper
 
@@ -40,7 +38,7 @@ services:
       - "9000:9000"
     environment:
       KAFKA_BROKERCONNECT: "kafka:9093"
-      JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
+      JVM_OPTS: "-Xms512M -Xmx512M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
     depends_on:
       - "kafka"      
 
