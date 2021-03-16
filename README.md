@@ -24,7 +24,7 @@ EVENT DRIVEN E MICROSERVICE USANDO COMMAND QUERY RESPONSABILITY SEGREGATION
 ## Ilustrações
 
 - [Componentes](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture1.png)
-- [Interação de componentes com o barramento de eventos](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture2.png)
+- [projeto arquitetural](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture2.png)
 - [Protótipo Arquitetural](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture3.png)
 - [CQRS](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture4.png)
 - [Implantação](https://github.com/rianmachado/easy-quality/blob/master/dominio-conformidades/ilustracoes/picture5.png)
