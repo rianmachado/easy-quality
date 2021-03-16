@@ -11,18 +11,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import br.com.easy.quality.event.Exception.DomainException;
-import br.com.easy.quality.event.command.Command;
-import lombok.Data;
+import br.com.easy.quality.event.command.PublishCommand;
 
-@Data
-public class PublishEvent implements Event {
+public class PublishEvent extends ObservabilityEvent {
 
-	private Exception exception;
-	private final Command command;
+	private final PublishCommand command;
 	private String id;
-	private long stopTime;
 
-	public PublishEvent(Command command) {
+	public PublishEvent(PublishCommand command) {
 		this.command = command;
 		id = gerarGUID();
 	}
@@ -88,13 +84,10 @@ public class PublishEvent implements Event {
 		return id;
 	}
 
-	public Command getCommand() {
+	public PublishCommand getCommand() {
 		return command;
 	}
 
-	public void setException(Exception exception) {
-		this.exception = exception;
-	}
 
 	public String getOrigin() {
 		return getSource().getClass().getSimpleName();
@@ -104,11 +97,4 @@ public class PublishEvent implements Event {
 		return !isSuccess();
 	}
 
-	public boolean isSuccess() {
-		return exception == null;
-	}
-
-	public void stopTimer() {
-		stopTime = System.nanoTime();
-	}
 }

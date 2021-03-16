@@ -16,14 +16,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import br.com.easy.quality.bus.service.ServiceBus;
 import br.com.easy.quality.inspecao.command.CreateInspecaoPublishCommand;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
-import br.com.easy.quality.inspecao.query.IdInspecaoQuery;
 import br.com.easy.quality.inspecao.query.ListAllInspecaoQuery;
+import br.com.easy.quality.inspecao.rest.application.EventBus;
 import io.swagger.annotations.ApiParam;
 
 @Controller
@@ -32,19 +30,19 @@ public class InspecaoApiController implements InspecaoApi {
 	private static final Logger log = LoggerFactory.getLogger(InspecaoApiController.class);
 
 	@Autowired
-	private ServiceBus serviceBus;
+	private EventBus eventBus;
 
 	public ResponseEntity<Void> criarInspecao(
 			@ApiParam(value = "Objeto utilizado para adicionar nova inspecao", required = true) @Valid @RequestBody InspecaoDTO body) {
 		var comando = new CreateInspecaoPublishCommand(body);
-		serviceBus.execute(comando);
+		eventBus.execute(comando);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 	
 	@Override
 	public ResponseEntity<List<InspecaoDTO>> getInspecoes() {
 		var query = ListAllInspecaoQuery.builder().build();
-		serviceBus.execute(query);
+		eventBus.execute(query);
 		return ResponseEntity.ok(query.getResult());
 	}
 

@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 
 import org.apache.commons.collections4.CollectionUtils;
 
-import br.com.easy.quality.event.command.Command;
+import br.com.easy.quality.event.command.PublishCommand;
 import br.com.easy.quality.inspecao.command.validation.SelfValidating;
 import br.com.easy.quality.inspecao.domain.Pergunta;
 import br.com.easy.quality.inspecao.domain.Questionario;
@@ -20,7 +20,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateInspecaoPublishCommand extends SelfValidating<CreateInspecaoPublishCommand> implements Command {
+public class CreateInspecaoPublishCommand extends SelfValidating<CreateInspecaoPublishCommand> implements PublishCommand {
 
 	@NotNull
 	private final String titulo;
