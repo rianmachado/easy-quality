@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import br.com.easy.quality.inspecao.command.CreateInspecaoPublishCommand;
 import br.com.easy.quality.inspecao.dto.InspecaoDTO;
 import br.com.easy.quality.inspecao.query.ListAllInspecaoQuery;
-import br.com.easy.quality.inspecao.rest.application.EventBus;
+import br.com.easy.quality.inspecao.rest.event.EventBus;
 import io.swagger.annotations.ApiParam;
 
 @Controller

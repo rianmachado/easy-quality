@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.questionario.event.listener;
+package br.com.easy.quality.questionario.adapter.kafka.event;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

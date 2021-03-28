@@ -8,7 +8,6 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,10 +19,10 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-@Api(value = "inspecoes", description = "the inspecoes API")
+@Api(value = "Inspecoes", description = "the inspecoes API")
 public interface InspecaoApi {
 
-	@ApiOperation(value = "Criar Inspecao", nickname = "criarInspecao", notes = "", tags = { "inspecao", })
+	@ApiOperation(value = "Criar Inspecao", nickname = "criarInspecao", notes = "", tags = { "Inspeção", })
 	@ApiResponses(value = { @ApiResponse(code = 405, message = "Invalid input") })
 	@RequestMapping(value = "/inspecoes", produces = { "application/json" }, consumes = {
 			"application/json" }, method = RequestMethod.POST)
@@ -31,8 +30,8 @@ public interface InspecaoApi {
 			@ApiParam(value = "Objeto utilizado para adicionar inspecoes(s)", required = true) @Valid @RequestBody InspecaoDTO body);
 
 
-	@ApiOperation(value = "Obter todos as inspecoes cadastrados", nickname = "getInspecaos", notes = "Retorna uma inspecao simples", response = InspecaoDTO.class, tags = {
-			"inspecao", })
+	@ApiOperation(value = "Obter todos as inspeções cadastrados", nickname = "getInspecoes", notes = "Retorna lista de inspeções", response = InspecaoDTO.class, tags = {
+			"Inspeção", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "successful operation", response = InspecaoDTO.class),
 			@ApiResponse(code = 400, message = "Invalid ID supplied"),
 			@ApiResponse(code = 404, message = "inspecao not found") })

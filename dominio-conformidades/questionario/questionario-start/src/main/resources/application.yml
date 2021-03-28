@@ -14,17 +14,17 @@ spring:
   data:
     mongodb:
       database: db_easyquality_form
-      host: 3.137.98.24
+      host: localhost
       port: 27017
   kafka:
     producer:
-      bootstrap-servers: 3.137.98.24:9092
+      bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       retries: 5
       transaction-id-prefix: logs-events-formulario-done
     consumer:
-      bootstrap-servers: 3.137.98.24:9092
+      bootstrap-servers: localhost:9092
       groupId: group-integration-cadastro-inspecao-questionario
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
       valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer

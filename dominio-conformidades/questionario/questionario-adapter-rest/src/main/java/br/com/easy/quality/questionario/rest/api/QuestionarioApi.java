@@ -42,12 +42,10 @@ public interface QuestionarioApi {
 	ResponseEntity<QuestionarioDTO> getQuestionarioPorId(
 			@ApiParam(value = "ID da questionario para retorno", required = true) @PathVariable("questionarioId") String questionarioId);
 
-	@ApiOperation(value = "Obter todos os questionarios cadastrados", nickname = "getQuestionarios", notes = "Retorna uma questionario simples", response = QuestionarioDTO.class, tags = {
+	@ApiOperation(value = "Obter todos os questionarios cadastrados", nickname = "getQuestionarios", notes = "Retorna lista de questionarios cadastrados", response = QuestionarioDTO.class, tags = {
 			"questionario", })
 	@ApiResponses(value = {
-			@ApiResponse(code = 200, message = "successful operation", response = QuestionarioDTO.class),
-			@ApiResponse(code = 400, message = "Invalid ID supplied"),
-			@ApiResponse(code = 404, message = "Questionario not found") })
+			@ApiResponse(code = 200, message = "successful operation", response = QuestionarioDTO.class)})
 	@RequestMapping(value = "/questionarios", produces = { "application/json" }, method = RequestMethod.GET)
 	public ResponseEntity<List<QuestionarioDTO>> getQuestionarios();
 	

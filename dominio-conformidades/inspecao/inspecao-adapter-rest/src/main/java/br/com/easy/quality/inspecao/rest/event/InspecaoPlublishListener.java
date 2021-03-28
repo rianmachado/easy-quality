@@ -1,7 +1,7 @@
 /**
  * @author rianmachado@gmail.com
  */
-package br.com.easy.quality.inspecao.rest.application;
+package br.com.easy.quality.inspecao.rest.event;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

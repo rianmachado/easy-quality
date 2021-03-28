@@ -5,7 +5,7 @@ package br.com.easy.quality.questionario.command;
 
 import javax.validation.constraints.NotNull;
 
-import br.com.easy.quality.event.command.Command;
+import br.com.easy.quality.event.command.PublishCommand;
 import br.com.easy.quality.questionario.questionario.validation.SelfValidating;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PublishQuestionarioCommand extends SelfValidating<PublishQuestionarioCommand>
-		implements Command {
+		implements PublishCommand {
 
 	@NotNull
 	private final String bodyJson;
