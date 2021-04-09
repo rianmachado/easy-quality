@@ -11,3 +11,5 @@ docker push 585849681126.dkr.ecr.us-east-2.amazonaws.com/ms-inspecao:v1
 
 
 docker logs <container_id>
+
+docker exec -it 8c073cfc630f sh
